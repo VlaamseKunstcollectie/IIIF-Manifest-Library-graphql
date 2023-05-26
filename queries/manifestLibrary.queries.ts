@@ -1212,16 +1212,11 @@ export const manifestLibraryQueries = gql`
     SortOptions {
       options(
         input: [
-          { icon: NoIcon, label: "Name", value: "name" }
+          { icon: NoIcon, label: "Title", value: "title" }
           {
             icon: NoIcon
-            label: "Last observation date"
-            value: "date_last_observation"
-          }
-          {
-            icon: NoIcon
-            label: "Last report date"
-            value: "date_last_reported"
+            label: "Creation Date"
+            value: "date_created"
           }
         ]
       ) {
