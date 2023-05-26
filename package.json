@@ -1,0 +1,17 @@
+{
+    "name": "manifest-library-module",
+    "version": "0.0.1",
+    "license": "MIT",
+    "main":"./manifestLibraryModule.ts",
+    "scripts": {
+      "build": "tsc"
+    },
+    "dependencies": {
+      "graphql-modules": "^2.1.0"
+    },
+    "publishConfig": {
+      "main": "./dist/modules/importModule/importModule.js",
+      "registry": "https://nexus.inuits.io/repository/npm-private"
+    }
+  }
+  
