@@ -275,6 +275,7 @@ export const manifestLibraryQueries = gql`
             }
             mediaFileElement {
               label(input: "Media")
+              type(input: media)
             }
           }
         }
