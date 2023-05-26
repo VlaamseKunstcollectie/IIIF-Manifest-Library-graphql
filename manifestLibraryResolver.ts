@@ -41,9 +41,7 @@ export const manifestLibraryResolver: Resolvers<ContextValue> = {
           {
             _id: parent.data.id || parent.data["@id"],
             original_file_location: parent.data.id || parent.data["@id"],
-            thumbnail_file_location: parent.metadata.find(
-              (data: Metadata) => data.key == "thumbnail"
-            ).value,
+            thumbnail_file_location: parent.data["items"][0]["thumbnail"][0]["id"],
             mimetype: "json/manifest",
           },
         ],
