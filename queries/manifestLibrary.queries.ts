@@ -778,15 +778,28 @@ export const manifestLibraryQueries = gql`
     }
   }
 
-  query getAdvancedFilters($choice: String!) {
-    advancedFilters(choice: $choice) {
-      label
-      type
-      key
-      isRelation
-      options {
-        value
-        label
+  query getAdvancedFilters($entityType: String!) {
+    EntityTypeInfo(type: $entityType) {
+      ... on Manifest {
+        advancedFilters{
+            id: advancedFilter(key: "id", label: "id", type: text){
+              label
+              type
+              key
+            }
+            name: advancedFilter(key: "title", label: "title", type: text){
+              label
+              type
+              key
+            }
+            type: advancedFilter(key: "type", label: "type", type: selection){
+              label
+              type
+              key
+              defaultValue(value: "Manifest")
+              hidden(value: true)
+            }
+        }
       }
     }
   }
