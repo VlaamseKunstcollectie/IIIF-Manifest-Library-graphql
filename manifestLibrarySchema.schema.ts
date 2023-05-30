@@ -9,6 +9,21 @@ export const manifestLibrarySchema = gql`
     manifest
   }
 
+  # Temporary fix
+  interface Entity {
+    id: String!
+    uuid: String!
+    type: String!
+    metadata(
+      keys: [String]!
+      excludeOrInclude: ExcludeOrInclude!
+    ): [MetadataAndRelation]
+    permission: [Permission]
+    intialValues: IntialValues!
+    entityView: ColumnList!
+  }
+  #
+
   type Asset implements Entity {
     id: String!
     uuid: String!
@@ -23,6 +38,7 @@ export const manifestLibrarySchema = gql`
     permission: [Permission]
     intialValues: IntialValues!
     entityView: ColumnList!
+    advancedFilters: advancedFilters
   }
 
   type Manifest implements Entity {
@@ -38,6 +54,24 @@ export const manifestLibrarySchema = gql`
     permission: [Permission]
     intialValues: IntialValues!
     entityView: ColumnList!
+    advancedFilters: advancedFilters
+  }
+
+  type ManifestEntity implements Entity {
+    id: String!
+    uuid: String!
+    type: String!
+    metadata(
+      keys: [String]!
+      excludeOrInclude: ExcludeOrInclude!
+    ): [MetadataAndRelation]!
+    media: Media
+    form: Form
+    teaserMetadata: [MetadataAndRelation]
+    permission: [Permission]
+    intialValues: IntialValues!
+    entityView: ColumnList!
+    advancedFilters: advancedFilters
   }
 
   type Mutation {

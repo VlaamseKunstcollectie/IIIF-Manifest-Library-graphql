@@ -8,6 +8,7 @@ import { AssetForm } from "./sources/forms";
 import {
   ColumnSizes,
   Entity,
+  Entitytyping,
   Media,
   Metadata,
   Permission,
@@ -15,6 +16,18 @@ import {
 } from "../../generated-types/type-defs";
 
 export const manifestLibraryResolver: Resolvers<ContextValue> = {
+  Entity: {
+    __resolveType(obj) {
+      if (obj.type == Entitytyping.Asset) {
+        return 'Asset';
+      } else if (obj.type == Entitytyping.Mediafile) {
+        return 'MediaFileEntity';
+      } else if (obj.type == Entitytyping.Manifest) {
+        return 'Manifest';
+      }
+      return 'BaseEntity';
+    },
+  },
   Asset: {
     media: async (parent: any, _args, { dataSources }) => {
       return resolveMedia(dataSources, parent);
