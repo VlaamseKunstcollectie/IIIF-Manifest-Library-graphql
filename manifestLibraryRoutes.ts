@@ -10,6 +10,7 @@ export const manifestLibraryRoutes = [
       {
         path: "entity/:id",
         name: "SingleEntity",
+        component: "SingleEntity",
         meta: {
           title: "Single Asset",
           requiresAuth: false,
