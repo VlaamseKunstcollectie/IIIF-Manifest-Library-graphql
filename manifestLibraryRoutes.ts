@@ -4,6 +4,7 @@ export const manifestLibraryRoutes = [
   {
     path: "/",
     name: "Home",
+    component: "Home",
     meta: { title: "Home", type: Collection.Entities, requiresAuth: false },
     children: [
       {
