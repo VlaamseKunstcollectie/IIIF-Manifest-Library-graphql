@@ -1212,6 +1212,15 @@ export const manifestLibraryQueries = gql`
           { icon: NoIcon, label: "Type", value: "type" }
           { icon: NoIcon, label: "Title", value: "title" }
           { icon: NoIcon, label: "Description", value: "description" }
+          { icon: NoIcon, label: "Date", value: "date" }
+          { icon: NoIcon, label: "Period", value: "period" }
+          { icon: NoIcon, label: "Institution", value: "institution" }
+          { icon: NoIcon, label: "Material", value: "material" }
+          { icon: NoIcon, label: "Dimensions", value: "dimensions" }
+          { icon: NoIcon, label: "Rights", value: "rights" }
+          { icon: NoIcon, label: "Subject", value: "subject" }
+          { icon: NoIcon, label: "Keywords", value: "keyword" }
+          { icon: NoIcon, label: "Location", value: "location" }
         ]
       ) {
         icon
@@ -1231,6 +1240,7 @@ export const manifestLibraryQueries = gql`
             label: "Creation Date"
             value: "date_created"
           }
+          { icon: NoIcon, label: "Date", value: "date" }
         ]
       ) {
         label
