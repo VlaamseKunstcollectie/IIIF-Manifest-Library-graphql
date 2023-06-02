@@ -778,6 +778,17 @@ export const manifestLibraryQueries = gql`
     }
   }
 
+  query getFilterMatcherMapping {
+    FilterMatcherMapping {
+      id
+      text
+      date
+      number
+      selection
+      boolean
+    }
+  }
+
   query getAdvancedFilters($entityType: String!) {
     EntityTypeFilters(type: $entityType) {
       ... on Manifest {
