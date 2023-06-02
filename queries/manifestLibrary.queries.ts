@@ -779,7 +779,7 @@ export const manifestLibraryQueries = gql`
   }
 
   query getAdvancedFilters($entityType: String!) {
-    EntityTypeInfo(type: $entityType) {
+    EntityTypeFilters(type: $entityType) {
       ... on Manifest {
         advancedFilters{
             id: advancedFilter(key: "id", label: "id", type: text){
