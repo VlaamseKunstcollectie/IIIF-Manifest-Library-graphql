@@ -553,6 +553,7 @@ export const manifestLibraryQueries = gql`
     $skip: Int
     $searchValue: SearchFilter
     $advancedSearchValue: [FilterInput]
+    $advancedFilterInputs: [AdvancedFilterInput!]!
     $searchInputType: SearchInputType
   ) {
     Entities(
@@ -560,6 +561,7 @@ export const manifestLibraryQueries = gql`
       skip: $skip
       searchValue: $searchValue
       advancedSearchValue: $advancedSearchValue
+      advancedFilterInputs: $advancedFilterInputs
       searchInputType: $searchInputType
     ) {
       count
