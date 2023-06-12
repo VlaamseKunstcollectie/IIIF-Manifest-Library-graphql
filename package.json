@@ -10,7 +10,7 @@
       "graphql-modules": "^2.1.0"
     },
     "publishConfig": {
-      "main": "./dist/modules/importModule/importModule.js",
+      "main": "./dist/modules/manifestLibraryModule/manifestLibraryModule.js",
       "registry": "https://nexus.inuits.io/repository/npm-private"
     }
   }
