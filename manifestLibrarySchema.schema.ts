@@ -1,6 +1,12 @@
 import { gql } from "graphql-modules";
 
 export const manifestLibrarySchema = gql`
+  enum RouteNames {
+    Home
+    SingleEntity
+    History
+  }
+
   enum Entitytyping {
     asset
     boek

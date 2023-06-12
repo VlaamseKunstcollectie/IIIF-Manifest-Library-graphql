@@ -1,15 +1,15 @@
-import { Collection } from "../../generated-types/type-defs";
+import { Collection, RouteNames } from "../../generated-types/type-defs";
 
 export const manifestLibraryRoutes = [
   {
     path: "/",
-    name: "Home",
-    component: "Home",
+    name: RouteNames.Home,
+    component: "HomeWrapper",
     meta: { title: "Home", type: Collection.Entities, requiresAuth: false },
     children: [
       {
         path: "entity/:id",
-        name: "SingleEntity",
+        name: RouteNames.SingleEntity,
         component: "SingleEntity",
         meta: {
           title: "Single Asset",
@@ -21,29 +21,9 @@ export const manifestLibraryRoutes = [
     ],
   },
   {
-    path: "/mediafiles",
-    name: "Mediafiles",
-    meta: {
-      title: "Mediafiles",
-      type: Collection.Mediafiles,
-      requiresAuth: true,
-    },
-    children: [
-      {
-        path: ":id",
-        name: "SingleMediafile",
-        meta: {
-          title: "Single Mediafile",
-          requiresAuth: true,
-          showEntityTitle: true,
-          type: Collection.Mediafiles,
-        },
-      },
-    ],
-  },
-  {
     path: "/history",
-    name: "History",
+    name: RouteNames.History,
+    component: "History",
     meta: { title: "History", requiresAuth: true },
   },
   { path: "/home", redirect: "/" },
