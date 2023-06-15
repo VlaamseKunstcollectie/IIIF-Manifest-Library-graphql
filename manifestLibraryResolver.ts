@@ -49,12 +49,13 @@ export const manifestLibraryResolver: Resolvers<ContextValue> = {
   },
   Manifest: {
     media: async (parent: any, _args, { dataSources }) => {
+      const thumbnail_file_location = parent.data.items?.[0].thumbnail[0].id || parent.data.sequences?.[0].canvases[0].thumbnail["@id"];
       const media: Media = {
         mediafiles: [
           {
             _id: parent.data.id || parent.data["@id"],
             original_file_location: parent.data.id || parent.data["@id"],
-            thumbnail_file_location: parent.data["items"][0]["thumbnail"][0]["id"],
+            thumbnail_file_location,
             mimetype: "json/manifest",
           },
         ],
