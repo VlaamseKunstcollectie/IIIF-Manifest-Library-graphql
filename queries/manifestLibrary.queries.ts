@@ -94,7 +94,7 @@ export const manifestLibraryQueries = gql`
     media {
       primary_transcode
     }
-    teaserMetadata: metadata(keys: ["title"], excludeOrInclude: include) {
+    teaserMetadata: metadata(keys: ["title", "object_number"], excludeOrInclude: include) {
       __typename
       ... on Metadata {
         ...metadata
@@ -426,10 +426,10 @@ export const manifestLibraryQueries = gql`
               }
             }
           }
-          ... on SimpleEntity {
+          ... on BaseEntity {
             ...minimalBaseEntity
             teaserMetadata: metadata(
-              keys: ["title"]
+              keys: ["title", "object_number"]
               excludeOrInclude: include
             ) {
               __typename
@@ -438,108 +438,6 @@ export const manifestLibraryQueries = gql`
               }
               ... on MetadataRelation {
                 ...metadataRelation
-              }
-            }
-          }
-          ... on IntermediateEntity {
-            ...minimalBaseEntity
-            ...fullEntity
-            metadata(keys: [], excludeOrInclude: exclude) {
-              __typename
-              ... on Metadata {
-                ...metadata
-              }
-              ... on MetadataRelation {
-                ...metadataRelation
-                linkedEntity {
-                  ...fullEntity
-                  ... on Asset {
-                    ...minimalBaseEntity
-                    media {
-                      primary_transcode
-                    }
-                    teaserMetadata: metadata(
-                      keys: ["title", "object_number"]
-                      excludeOrInclude: include
-                    ) {
-                      __typename
-                      ... on Metadata {
-                        ...metadata
-                      }
-                      ... on MetadataRelation {
-                        ...metadataRelation
-                      }
-                    }
-                  }
-                  ... on SimpleEntity {
-                    ...minimalBaseEntity
-                    teaserMetadata: metadata(
-                      keys: ["title"]
-                      excludeOrInclude: include
-                    ) {
-                      __typename
-                      ... on Metadata {
-                        ...metadata
-                      }
-                      ... on MetadataRelation {
-                        ...metadataRelation
-                      }
-                    }
-                  }
-                  metadata(keys: [], excludeOrInclude: exclude) {
-                    __typename
-                    ... on Metadata {
-                      ...metadata
-                    }
-                    ... on MetadataRelation {
-                      ...metadataRelation
-                      linkedEntity {
-                        ...fullEntity
-                        ... on Asset {
-                          ...minimalBaseEntity
-                          media {
-                            primary_transcode
-                          }
-                          teaserMetadata: metadata(
-                            keys: ["title", "object_number"]
-                            excludeOrInclude: include
-                          ) {
-                            __typename
-                            ... on Metadata {
-                              ...metadata
-                            }
-                            ... on MetadataRelation {
-                              ...metadataRelation
-                            }
-                          }
-                        }
-                        ... on SimpleEntity {
-                          ...minimalBaseEntity
-                          teaserMetadata: metadata(
-                            keys: ["title"]
-                            excludeOrInclude: include
-                          ) {
-                            __typename
-                            ... on Metadata {
-                              ...metadata
-                            }
-                            ... on MetadataRelation {
-                              ...metadataRelation
-                            }
-                          }
-                        }
-                        metadata(keys: [], excludeOrInclude: exclude) {
-                          ... on Metadata {
-                            ...metadata
-                          }
-                          ... on MetadataRelation {
-                            ...metadataRelation
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
               }
             }
           }
@@ -659,29 +557,8 @@ export const manifestLibraryQueries = gql`
             }
           }
         }
-        ... on SimpleEntity {
-          teaserMetadata: metadata(keys: ["title"], excludeOrInclude: include) {
-            __typename
-            ... on Metadata {
-              key
-              value
-              label
-              immutable
-            }
-            ... on MetadataRelation {
-              key
-              value
-              label
-              type
-              metadataOnRelation {
-                key
-                value
-              }
-            }
-          }
-        }
-        ... on IntermediateEntity {
-          teaserMetadata: metadata(keys: ["title"], excludeOrInclude: include) {
+        ... on BaseEntity {
+          teaserMetadata: metadata(keys: ["title", "object_number", "manifest"], excludeOrInclude: include) {
             __typename
             ... on Metadata {
               key
@@ -944,7 +821,7 @@ export const manifestLibraryQueries = gql`
       }
     }
     user
-    teaserMetadata: metadata(keys: [], excludeOrInclude: include) {
+    teaserMetadata: metadata(keys: ["title", "object_number", "manifest"], excludeOrInclude: include) {
       __typename
       ... on Metadata {
         key
