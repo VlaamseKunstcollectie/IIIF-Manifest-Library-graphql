@@ -5,7 +5,12 @@ export const manifestLibraryRoutes = [
     path: "/",
     name: RouteNames.Home,
     component: "HomeWrapper",
-    meta: { title: "Home", type: Collection.Entities, requiresAuth: false },
+    meta: {
+      title: "Home",
+      type: Collection.Entities,
+      requiresAuth: false,
+      entityType: "BaseEntity"
+    },
     children: [
       {
         path: "entity/:id",

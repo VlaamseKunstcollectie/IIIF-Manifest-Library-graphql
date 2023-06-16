@@ -670,25 +670,74 @@ export const manifestLibraryQueries = gql`
 
   query getAdvancedFilters($entityType: String!) {
     EntityTypeFilters(type: $entityType) {
-      ... on Manifest {
+      ... on BaseEntity {
         advancedFilters{
-            id: advancedFilter(key: "id", label: "id", type: text){
-              label
+          title: advancedFilter(key: "title", label: "Title", type: text) {
+            label
+            type
+            key
+          }
+          type: advancedFilter(
+            key: "type", label: "Type", type: selection
+            advancedFilterInputForRetrievingOptions: {
+              type: text, key: "type", value: "*", item_types: ["manifest"], provide_value_options_for_key: true
+            }
+          ) {
+            type
+            key
+            label
+            advancedFilterInputForRetrievingOptions {
               type
               key
+              value
+              item_types
+              provide_value_options_for_key
             }
-            name: advancedFilter(key: "title", label: "title", type: text){
-              label
+          }
+          institution: advancedFilter(
+            key: "institution", label: "Institution", type: selection
+            advancedFilterInputForRetrievingOptions: {
+              type: text, key: "institution", value: "*", item_types: ["manifest"], provide_value_options_for_key: true
+            }
+          ) {
+            type
+            key
+            label
+            advancedFilterInputForRetrievingOptions {
               type
               key
+              value
+              item_types
+              provide_value_options_for_key
             }
-            type: advancedFilter(key: "type", label: "type", type: selection){
-              label
+          }
+          keyword: advancedFilter(key: "keyword", label: "Keyword", type: text) {
+            label
+            type
+            key
+          }
+          rights: advancedFilter(
+            key: "rights", label: "Rights", type: selection
+            advancedFilterInputForRetrievingOptions: {
+              type: text, key: "rights", value: "*", item_types: ["manifest"], provide_value_options_for_key: true
+            }
+          ) {
+            type
+            key
+            label
+            advancedFilterInputForRetrievingOptions {
               type
               key
-              defaultValue(value: "Manifest")
-              hidden(value: true)
+              value
+              item_types
+              provide_value_options_for_key
             }
+          }
+          description: advancedFilter(key: "description", label: "Description", type: text) {
+            label
+            type
+            key
+          }
         }
       }
     }
@@ -1133,9 +1182,14 @@ export const manifestLibraryQueries = gql`
           { icon: NoIcon, label: "Date", value: "date" }
         ]
       ) {
+        icon
         label
         value
       }
     }
+  }
+
+  query getFilterOptions($input: AdvancedFilterInput!, $limit: Int!) {
+    FilterOptions(input: $input, limit: $limit)
   }
 `;
