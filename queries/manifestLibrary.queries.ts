@@ -33,34 +33,6 @@ export const manifestLibraryQueries = gql`
     type
   }
 
-  fragment editForm on Form {
-    fields {
-      __typename
-      ... on MetadataField {
-        label
-        key
-        type
-        options {
-          value
-          label
-        }
-      }
-      ... on RelationField {
-        key
-        label
-        relationType
-        disabled
-        metadata {
-          key
-          type
-          label
-        }
-        acceptedEntityTypes
-        viewMode
-      }
-    }
-  }
-
   fragment minimalAsset on Asset {
     ...minimalBaseEntity
     media {
@@ -449,7 +421,7 @@ export const manifestLibraryQueries = gql`
   query getEntities(
     $limit: Int
     $skip: Int
-    $searchValue: SearchFilter
+    $searchValue: SearchFilter!
     $advancedSearchValue: [FilterInput]
     $advancedFilterInputs: [AdvancedFilterInput!]!
     $searchInputType: SearchInputType
@@ -929,35 +901,12 @@ export const manifestLibraryQueries = gql`
     }
   }
 
-  query GetForms($type: String!) {
-    Form(type: $type) {
-      fields {
-        __typename
-        ... on MetadataField {
-          label
-          key
-          type
-          active
-          options {
-            value
-            label
-          }
-        }
-        ... on RelationField {
-          key
-          label
-          relationType
-          disabled
-          metadata {
-            key
-            type
-            label
-          }
-          acceptedEntityTypes
-        }
-      }
+  query GetCreateEntityForm($type: String!) {
+    GetCreateEntityForm(type: $type) {
+        idPrefix
     }
   }
+
   #to do : Add LinkType for modal or route
   query GetMenu($name: String!) {
     Menu(name: $name) {
