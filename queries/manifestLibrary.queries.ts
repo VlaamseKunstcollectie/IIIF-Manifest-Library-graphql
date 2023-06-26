@@ -793,8 +793,8 @@ export const manifestLibraryQueries = gql`
     deleteRelations(id: $id, metadata: $metadata)
   }
 
-  mutation deleteData($id: String!, $path: Collection!) {
-    deleteData(id: $id, path: $path)
+  mutation deleteData($id: String!, $path: Collection!, $deleteMediafiles: Boolean!) {
+    deleteData(id: $id, path: $path, deleteMediafiles: $deleteMediafiles)
   }
 
   mutation createEntity($data: EntityInput!) {
