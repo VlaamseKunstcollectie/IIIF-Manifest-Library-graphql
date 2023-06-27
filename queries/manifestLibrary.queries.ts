@@ -119,8 +119,6 @@ export const manifestLibraryQueries = gql`
           elements {
             entityListElement {
               label(input: "Assets")
-              type(input: "component")
-              key(input: "Relatie")
             }
             mediaFileElement {
               label(input: "Media")
@@ -243,8 +241,6 @@ export const manifestLibraryQueries = gql`
             entityListElement {
               isCollapsed(input: true)
               label(input: "Assets")
-              type(input: "component")
-              key(input: "Relatie")
             }
             mediaFileElement {
               label(input: "Media")
