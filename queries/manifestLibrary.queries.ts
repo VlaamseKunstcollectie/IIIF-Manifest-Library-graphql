@@ -108,10 +108,10 @@ export const manifestLibraryQueries = gql`
           relationType
           toBeDeleted
         }
-        title: keyValue(key: "title")
-        date: keyValue(key: "date")
-        publisher: keyValue(key: "publisher")
-        object_number: keyValue(key: "object_number")
+        title: keyValue(key: "title", source: metadata)
+        date: keyValue(key: "date", source: metadata)
+        publisher: keyValue(key: "publisher", source: metadata)
+        object_number: keyValue(key: "object_number", source: metadata)
       }
       entityView {
         column {
@@ -226,13 +226,13 @@ export const manifestLibraryQueries = gql`
     }
     ... on Manifest {
       intialValues {
-        title: keyValue(key: "title")
-        date: keyValue(key: "date")
-        creator: keyValue(key: "creator")
-        photographer: keyValue(key: "photographer")
-        description: keyValue(key: "description")
-        object_number: keyValue(key: "object_number")
-        location: keyValue(key: "location")
+        title: keyValue(key: "title", source: metadata)
+        date: keyValue(key: "date", source: metadata)
+        creator: keyValue(key: "creator", source: metadata)
+        photographer: keyValue(key: "photographer", source: metadata)
+        description: keyValue(key: "description", source: metadata)
+        object_number: keyValue(key: "object_number", source: metadata)
+        location: keyValue(key: "location", source: metadata)
       }
       entityView {
         column {
