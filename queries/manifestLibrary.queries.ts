@@ -233,6 +233,7 @@ export const manifestLibraryQueries = gql`
         description: keyValue(key: "description", source: metadata)
         object_number: keyValue(key: "object_number", source: metadata)
         location: keyValue(key: "location", source: metadata)
+        manifest: keyValue(key: "manifest", source: metadata)
       }
       entityView {
         column {
@@ -290,7 +291,7 @@ export const manifestLibraryQueries = gql`
                   label(input: "Fotograaf")
                   key(input: "photographer")
                 }
-                Objectnummer: metaData {
+                objectnummer: metaData {
                   label(input: "Objectnummer")
                   key(input: "object_number")
                   inputField(type: baseTextField) {
@@ -298,8 +299,15 @@ export const manifestLibraryQueries = gql`
                   }
                 }
                 location: metaData {
-                  label(input: "location")
+                  label(input: "Locatie")
                   key(input: "location")
+                  inputField(type: baseTextField) {
+                    ...inputfield
+                  }
+                }
+                manifest: metaData {
+                  label(input: "Manifest")
+                  key(input: "manifest")
                   inputField(type: baseTextField) {
                     ...inputfield
                   }
@@ -1105,6 +1113,7 @@ export const manifestLibraryQueries = gql`
           { icon: NoIcon, label: "Subject", value: "subject" }
           { icon: NoIcon, label: "Keywords", value: "keyword" }
           { icon: NoIcon, label: "Location", value: "location" }
+          { icon: NoIcon, label: "Manifest", value: "manifest" }
         ]
       ) {
         icon
