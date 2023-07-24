@@ -49,7 +49,13 @@ export const manifestLibraryResolver: Resolvers<ContextValue> = {
   },
   Manifest: {
     media: async (parent: any, _args, { dataSources }) => {
-      const thumbnail_file_location = parent.data.items?.[0].thumbnail[0].id || parent.data.sequences?.[0].canvases[0].thumbnail?.["@id"];
+      if (parent.data.sequences?.[0].canvases[0].images?.[0].resource?.service?.["@id"]) {
+        var thumbnail_file_location = parent.data.sequences?.[0].canvases[0].images?.[0].resource?.service?.["@id"];
+        thumbnail_file_location += "/full/400,/0/default.jpg";
+      }
+      else {
+        var thumbnail_file_location = parent.data.items?.[0].thumbnail[0].id || parent.data.sequences?.[0].canvases[0].thumbnail?.["@id"];
+      }
       const media: Media = {
         mediafiles: [
           {
