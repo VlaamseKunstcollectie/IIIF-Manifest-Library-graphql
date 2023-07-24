@@ -42,10 +42,12 @@ export const manifestLibraryAppConfig: Environment = {
       process.env.STORAGE_API_URL || "http://storage-api.dams.localhost:8100/",
   },
   features: {
-    useOldSingleEntityComponent: false,
-    hasSimpleSearch: true,
+    hasSimpleSearch: false,
   },
   routerConfig: manifestLibraryRoutes,
+  customization: {
+    applicationTitle: "VKC Manifest Library",
+  },
   bulkSelectAllSizeLimit: 100,
   damsFrontend:
     process.env.DAMS_FRONTEND_URL || "http://dashboard.dams.localhost:8100",
