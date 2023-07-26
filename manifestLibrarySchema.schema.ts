@@ -45,6 +45,7 @@ export const manifestLibrarySchema = gql`
     intialValues: IntialValues!
     entityView: ColumnList!
     advancedFilters: AdvancedFilters
+    sortOptions: SortOptions
   }
 
   type Manifest implements Entity {
@@ -61,6 +62,7 @@ export const manifestLibrarySchema = gql`
     intialValues: IntialValues!
     entityView: ColumnList!
     advancedFilters: AdvancedFilters
+    sortOptions: SortOptions
   }
 
   type ManifestEntity implements Entity {
@@ -78,6 +80,7 @@ export const manifestLibrarySchema = gql`
     intialValues: IntialValues!
     entityView: ColumnList!
     advancedFilters: AdvancedFilters
+    sortOptions: SortOptions
   }
 
   type Mutation {

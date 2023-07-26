@@ -1123,22 +1123,22 @@ export const manifestLibraryQueries = gql`
     }
   }
 
-  query GetSortOptions {
-    SortOptions {
-      options(
-        input: [
-          { icon: NoIcon, label: "Title", value: "title" }
-          {
-            icon: NoIcon
-            label: "Creation Date"
-            value: "date_created"
+  query GetSortOptions($entityType: String!) {
+    EntityTypeSortOptions(entityType: $entityType) {
+      ... on BaseEntity {
+        sortOptions {
+          options(
+            input: [
+            { icon: NoIcon, label: "title", value: "title" }
+            { icon: NoIcon, label: "Creation Date", value: "date_created" }
+            { icon: NoIcon, label: "Date", value: "date" }
+            ]
+          ) {
+            icon
+            label
+            value
           }
-          { icon: NoIcon, label: "Date", value: "date" }
-        ]
-      ) {
-        icon
-        label
-        value
+        }
       }
     }
   }
