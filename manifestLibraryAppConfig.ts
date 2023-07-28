@@ -47,6 +47,7 @@ export const manifestLibraryAppConfig: Environment = {
   routerConfig: manifestLibraryRoutes,
   customization: {
     applicationTitle: "VKC Manifest Library",
+    applicationLocale: 'nl',
   },
   bulkSelectAllSizeLimit: 100,
   damsFrontend:
