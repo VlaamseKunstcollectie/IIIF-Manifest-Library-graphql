@@ -231,6 +231,8 @@ export const manifestLibraryQueries = gql`
         creator: keyValue(key: "creator", source: metadata)
         photographer: keyValue(key: "photographer", source: metadata)
         description: keyValue(key: "description", source: metadata)
+        rights: keyValue(key: "rights", source: metadata)
+        naamsvermelding: keyValue(key: "naamsvermelding", source: metadata)
         object_number: keyValue(key: "object_number", source: metadata)
         location: keyValue(key: "location", source: metadata)
         manifest: keyValue(key: "manifest", source: metadata)
@@ -272,6 +274,20 @@ export const manifestLibraryQueries = gql`
                 description: metaData {
                   label(input: "Beschrijving")
                   key(input: "description")
+                  inputField(type: baseTextField) {
+                    ...inputfield
+                  }
+                }
+                rights: metaData {
+                  label(input: "Rechten")
+                  key(input: "rights")
+                  inputField(type: baseTextField) {
+                    ...inputfield
+                  }
+                }
+                naamsvermelding: metaData {
+                  label(input: "Naamsvermelding")
+                  key(input: "naamsvermelding")
                   inputField(type: baseTextField) {
                     ...inputfield
                   }
