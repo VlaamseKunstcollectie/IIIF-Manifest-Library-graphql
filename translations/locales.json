@@ -1,0 +1,366 @@
+{
+    "en": {
+        "form": {
+            "title": "title",
+            "create": "Create"
+        },
+        "search": {
+            "noresult": "No results",
+            "asset-library": "Search Asset Library...",
+            "mediafile-library": "Search Mediafiles..."
+        },
+        "media-info": {
+            "primaire-media": "Primary media",
+            "thumbnail": "Primary thumbnail",
+            "set-primair": "Set as primary",
+            "set-thumbnail": "Set as thumbnail"
+        },
+        "media-files": {
+            "linked-assets": {
+                "related-assets": "Related assets"
+            }
+        },
+        "entity": {
+            "create": "Create entity",
+            "type": "Type"
+        },
+        "dropzone": {
+            "drag-add": "Drag your files, or click here to add your files",
+            "failed": "File(s) failed to upload.",
+            "success": "File(s) successfully uploaded.",
+            "uploading": "Uploading...",
+            "upload": "Upload",
+            "successNotification": {
+                "title": "Upload finished",
+                "description": "All files were succesfully uploaded"
+            }
+        },
+        "buttons": {
+            "delete": "Delete",
+            "save": "Save",
+            "discard": "Discard",
+            "add": "Add"
+        },
+        "loading": "Loading...",
+        "parent": {
+            "id": "ID",
+            "date": "Date",
+            "type": "Type",
+            "user": "User",
+            "load-more": "Load more"
+        },
+        "partials": {
+            "no": "No",
+            "available": "available"
+        },
+        "navigation": {
+            "title": "Elody",
+            "entities": "Entities",
+            "assets": "Assets",
+            "new": "New",
+            "log-out": "Log out",
+            "log-in": "Log in",
+            "page-not-found": "Oops, we couldn't find the page you are looking for.",
+            "go-home": "Go back home"
+        },
+        "upload": {
+            "upload-files": "Upload files",
+            "import": "Import from external source",
+            "reset": "Reset view"
+        },
+        "audio": {
+            "no-support": "Your browser does not support the audio element."
+        },
+        "library": {
+            "search": "Search",
+            "items": "items",
+            "sort": "order by",
+            "loading": "Loading",
+            "add": "Add"
+        },
+        "confirmation": {
+            "sure-message": "Are you sure you want to delete this?",
+            "cancel": "Cancel",
+            "confirm": "Confirm"
+        },
+        "job-helper": {
+            "finished": "finished",
+            "failed": "failed",
+            "pending": "pending"
+        },
+        "history-view": {
+            "search": "Search History"
+        },
+        "saved-searches": {
+            "new": "Save as new",
+            "save-changes": "Save changes",
+            "edit-label": "Edit label",
+            "reset": "Reset",
+            "delete": "Delete",
+            "all-filters": "All filters",
+            "search-title": "Search title",
+            "edit": "Edit",
+            "search-saved-searches": "Search Saved Searches"
+        },
+        "notifications": {
+            "success": {
+                "entityCreated": {
+                    "title": "Entity successfully created",
+                    "description": "Changes have been saved successfully"
+                },
+                "entityUpdated": {
+                    "title": "Entity successfully Updated",
+                    "description": "Changes have been saved successfully"
+                }
+            },
+            "graphql-errors": {
+                "duplicate": {
+                    "title": "Duplicate",
+                    "description": "Duplicate file detected, upload reverted"
+                },
+                "forbidden": {
+                    "title": "Forbidden",
+                    "description": "You don't have access to this page/action"
+                }
+            }
+        },
+        "bulk-operations": {
+            "undo-selection": "undo selection",
+            "select-page": "select page",
+            "select-all": "select all",
+            "edit": "Edit",
+            "items": "items",
+            "selected": "selected",
+            "save": "save",
+            "cancel": "cancel",
+            "delete": "delete",
+            "confirm-selection": "confirm selection",
+            "csv-export": {
+                "error": {
+                    "title": "Export failed"
+                }
+            },
+            "download-mediafiles": "Download mediafiles",
+            "export-to-csv": "Export to CSV"
+        },
+        "dropdown": {
+            "select-option": "select option"
+        },
+        "pagination": {
+            "page": "page",
+            "of": "of"
+        },
+        "filters": {
+            "filter": "Filters",
+            "add-filter": "Add filter",
+            "active": "active",
+            "clear": "Clear all",
+            "apply": "Apply filter(s)",
+            "matcher-labels": {
+                "select-filter-type": "Select filter type",
+                "AnyMatcher": "on any value",
+                "ContainsMatcher": "partly",
+                "ExactMatcher": "exact",
+                "IdMatcher": "ID",
+                "InBetweenMatcher": "between two values",
+                "MaxIncludedMatcher": "on maximum value (included)",
+                "MaxMatcher": "on maximum value (not included)",
+                "MinIncludedMatcher": "on minimum value (included)",
+                "MinMatcher": "on minimum value (not included)",
+                "NoneMatcher": "on empty value"
+            }
+        },
+        "confirm": {
+            "sure-message": "Are you sure you want to delete this?",
+            "delete-entity": "delete entity",
+            "delete-entity-mediafiles": "delete entity and mediafiles"
+        },
+        "panel-labels": {},
+        "window-element-labels": {},
+        "metadata": {
+            "labels": {}
+        }
+    },
+    "nl": {
+        "form": {
+            "title": "titel",
+            "create": "Create"
+        },
+        "search": {
+            "noresult": "Geen resultaten",
+            "asset-library": "Zoek asset library...",
+            "mediafile-library": "Zoek Mediafiles..."
+        },
+        "media-info": {
+            "primaire-media": "Primaire media",
+            "thumbnail": "Primaire thumbnail",
+            "set-primair": "Stel in als primaire",
+            "set-thumbnail": "Stel in als thumbnail"
+        },
+        "media-files": {
+            "linked-assets": {
+                "related-assets": "Gerelateerde assets"
+            }
+        },
+        "entity": {
+            "create": "Maak entiteit",
+            "type": "Type"
+        },
+        "dropzone": {
+            "drag-add": "Sleep je bestanden, of klik hier om bestanden toe te voegen",
+            "failed": "Bestand(en) konden niet worden gëuploaded.",
+            "success": "Bestand(en) succesvol gëuploaded",
+            "uploading": "Uploaden...",
+            "upload": "Upload",
+            "successNotification": {
+                "title": "Upload klaar",
+                "description": "Alle bestanden werden succesvol gëuploaded"
+            }
+        },
+        "buttons": {
+            "delete": "Verwijderen",
+            "save": "Opslaan",
+            "discard": "Wegwerpen",
+            "add": "Toevoegen"
+        },
+        "loading": "Laden...",
+        "parent": {
+            "id": "ID",
+            "date": "Datum",
+            "type": "Type",
+            "user": "Gebruiker",
+            "load-more": "Laad meer"
+        },
+        "partials": {
+            "no": "Nee",
+            "available": "available"
+        },
+        "navigation": {
+            "title": "Elody",
+            "entities": "Entiteiten",
+            "assets": "Assets",
+            "new": "Nieuw",
+            "log-out": "Uitloggen",
+            "log-in": "Inloggen",
+            "page-not-found": "Oops, we konden deze pagina niet vinden.",
+            "go-home": "Ga terug naar het startscherm"
+        },
+        "upload": {
+            "upload-files": "Bestanden uploaden",
+            "import": "Importeer van externe bron",
+            "reset": "Reset"
+        },
+        "audio": {
+            "no-support": "Uw browser ondersteund het audio element niet"
+        },
+        "library": {
+            "search": "Zoeken",
+            "items": "items",
+            "sort": "ordenen op",
+            "loading": "Laden",
+            "add": "Toevoegen"
+        },
+        "confirmation": {
+            "sure-message": "Ben je zeker dat je dit wilt verwijderen?",
+            "cancel": "Annuleren",
+            "confirm": "Bevestigen"
+        },
+        "job-helper": {
+            "finished": "klaar",
+            "failed": "mislukt",
+            "pending": "pending"
+        },
+        "history-view": {
+            "search": "Zoek geschiedenis"
+        },
+        "saved-searches": {
+            "new": "Opslaan als nieuw",
+            "save-changes": "Wijzigingen opslaan",
+            "edit-label": "Label bewerken",
+            "reset": "Reset",
+            "delete": "Verwijderen",
+            "all-filters": "Alle filters",
+            "search-title": "Zoek titel",
+            "edit": "Bewerken",
+            "search-saved-searches": "Zoek in bewaarde zoekopdrachten"
+        },
+        "notifications": {
+            "success": {
+                "entityCreated": {
+                    "title": "Entiteit succesvol gecreëerd",
+                    "description": "Wijzigingen succesvol opgeslagen"
+                },
+                "entityUpdated": {
+                    "title": "Entiteit succesvol gëupdated",
+                    "description": "Wijzigingen succesvol opgeslagen"
+                }
+            },
+            "graphql-errors": {
+                "duplicate": {
+                    "title": "Duplicaat",
+                    "description": "Dubbel bestand gedetecteerd, upload teruggedraaid"
+                },
+                "forbidden": {
+                    "title": "Verboden",
+                    "description": "Je hebt geen toegang tot deze pagina/actie"
+                }
+            }
+        },
+        "bulk-operations": {
+            "undo-selection": "selectie ongedaan maken",
+            "select-page": "pagina selecteren",
+            "select-all": "alles selecteren",
+            "edit": "Bewerken",
+            "items": "items",
+            "selected": "geselecteerd",
+            "save": "opslaan",
+            "cancel": "annuleren",
+            "delete": "verwijderen",
+            "confirm-selection": "selectie bevestigen",
+            "csv-export": {
+                "error": {
+                    "title": "Export mislukt"
+                }
+            },
+            "download-mediafiles": "Download media bestanden",
+            "export-to-csv": "Exporteer naar CSV"
+        },
+        "dropdown": {
+            "select-option": "selecteer optie"
+        },
+        "pagination": {
+            "page": "pagina",
+            "of": "van"
+        },
+        "filters": {
+            "filter": "Filters",
+            "add-filter": "Filter toevoegen",
+            "active": "actief",
+            "clear": "Alles wissen",
+            "apply": "Filter(s) toepassen",
+            "matcher-labels": {
+                "select-filter-type": "Selecteer filter type",
+                "AnyMatcher": "op eender welke waarde",
+                "ContainsMatcher": "gedeeltelijk",
+                "ExactMatcher": "exact",
+                "IdMatcher": "ID",
+                "InBetweenMatcher": "tussen twee waardes",
+                "MaxIncludedMatcher": "op maximum waarde (inclusief)",
+                "MaxMatcher": "op maximum waarde (exclusief)",
+                "MinIncludedMatcher": "op minimum waarde (inclusief)",
+                "MinMatcher": "op minimum waarde (exclusief)",
+                "NoneMatcher": "op lege waarde"
+            }
+        },
+        "confirm": {
+            "sure-message": "Ben je zeker dat je dit wilt verwijderen?",
+            "delete-entity": "verwijder entiteit",
+            "delete-entity-mediafiles": "verwijder entiteit en media bestanden"
+        },
+        "panel-labels": {},
+        "window-element-labels": {},
+        "metadata": {
+            "labels": {}
+        }
+    }
+}
