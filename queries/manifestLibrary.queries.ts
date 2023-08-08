@@ -810,33 +810,6 @@ export const manifestLibraryQueries = gql`
     }
   }
 
-  mutation editMetadata($id: String!, $metadata: [MetadataInput!]!) {
-    replaceMetadata(id: $id, metadata: $metadata) {
-      key
-      value
-      lang
-    }
-  }
-
-  mutation replaceRelationsAndMetaData(
-    $id: String!
-    $form: MetadataFormInput!
-  ) {
-    replaceRelationsAndMetaData(id: $id, form: $form) {
-      ...fullEntityRecursive
-    }
-  }
-
-  mutation updateRelationsAndMetadata($id: String!, $data: EntityFormInput!) {
-    updateRelationsAndMetadata(id: $id, data: $data) {
-      ...fullEntityRecursive
-    }
-  }
-
-  mutation deleteRelations($id: String!, $metadata: [MetadataInput!]!) {
-    deleteRelations(id: $id, metadata: $metadata)
-  }
-
   mutation deleteData($id: String!, $path: Collection!, $deleteMediafiles: Boolean!) {
     deleteData(id: $id, path: $path, deleteMediafiles: $deleteMediafiles)
   }
@@ -845,18 +818,6 @@ export const manifestLibraryQueries = gql`
     createEntity(entity: $data) {
       ...fullEntity
     }
-  }
-
-  mutation setMediaPrimaire($entity_id: String!, $mediafile_id: String!) {
-    setMediaPrimaire(entity_id: $entity_id, mediafile_id: $mediafile_id)
-  }
-
-  mutation setThumbnailPrimaire($entity_id: String!, $mediafile_id: String!) {
-    setThumbnailPrimaire(entity_id: $entity_id, mediafile_id: $mediafile_id)
-  }
-
-  mutation updateMediafilesOrder($value: OrderArrayInput!) {
-    updateMediafilesOrder(value: $value)
   }
 
   fragment inputfield on InputField {
