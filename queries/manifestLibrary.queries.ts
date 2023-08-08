@@ -765,6 +765,13 @@ export const manifestLibraryQueries = gql`
     }
   }
 
+  mutation mutateEntityValues($id: String!, $formInput: EntityFormInput!) {
+    mutateEntityValues(id: $id, formInput: $formInput) {
+      ...fullEntityRecursive
+    }
+  }
+
+
   mutation postStartImport($folder: String!) {
     postStartImport(folder: $folder) {
       message_id
