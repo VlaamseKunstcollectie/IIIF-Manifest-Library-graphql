@@ -92,22 +92,6 @@ export const manifestLibraryQueries = gql`
     }
     ... on Asset {
       intialValues {
-        relatie: relation(key: "relatie") {
-          teaserMetadata(
-            keys: ["title", "object_number"]
-            excludeOrInclude: include
-          ) {
-            __typename
-            ... on Metadata {
-              key
-              value
-              label
-            }
-          }
-          id
-          relationType
-          toBeDeleted
-        }
         title: keyValue(key: "title", source: metadata)
         date: keyValue(key: "date", source: metadata)
         publisher: keyValue(key: "publisher", source: metadata)

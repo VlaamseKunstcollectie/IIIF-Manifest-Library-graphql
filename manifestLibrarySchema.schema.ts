@@ -26,6 +26,7 @@ export const manifestLibrarySchema = gql`
     ): [MetadataAndRelation]
     permission: [Permission]
     intialValues: IntialValues!
+    relationValues: RelationValues!
     entityView: ColumnList!
   }
   #
@@ -43,6 +44,7 @@ export const manifestLibrarySchema = gql`
     title: [MetadataAndRelation]
     permission: [Permission]
     intialValues: IntialValues!
+    relationValues: RelationValues!
     entityView: ColumnList!
     advancedFilters: AdvancedFilters
     sortOptions: SortOptions
@@ -60,6 +62,7 @@ export const manifestLibrarySchema = gql`
     teaserMetadata: [MetadataAndRelation]
     permission: [Permission]
     intialValues: IntialValues!
+    relationValues: RelationValues!
     entityView: ColumnList!
     advancedFilters: AdvancedFilters
     sortOptions: SortOptions
@@ -78,6 +81,7 @@ export const manifestLibrarySchema = gql`
     teaserMetadata: [MetadataAndRelation]
     permission: [Permission]
     intialValues: IntialValues!
+    relationValues: RelationValues!
     entityView: ColumnList!
     advancedFilters: AdvancedFilters
     sortOptions: SortOptions
