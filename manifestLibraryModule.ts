@@ -3,6 +3,7 @@ import { manifestLibraryResolver } from "./manifestLibraryResolver";
 import { manifestLibrarySchema } from "./manifestLibrarySchema.schema";
 import { manifestLibraryQueries } from "./queries/manifestLibrary.queries";
 import { manifestLibraryAppConfig } from "./manifestLibraryAppConfig";
+import { loadTranslations } from "./translations/loadTranslations";
 
 const manifestLibraryModule = createModule({
   id: "manifestLibraryModule",
@@ -11,4 +12,6 @@ const manifestLibraryModule = createModule({
   resolvers: [manifestLibraryResolver],
 });
 
-export { manifestLibraryQueries, manifestLibraryModule, manifestLibraryAppConfig };
+const appTranslations = loadTranslations("./locales.json");
+
+export { manifestLibraryQueries, manifestLibraryModule, manifestLibraryAppConfig, appTranslations };
