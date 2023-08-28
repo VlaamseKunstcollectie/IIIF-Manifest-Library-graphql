@@ -30,6 +30,7 @@ export const manifestLibraryAppConfig: Environment = {
     apiCodeEndpoint: process.env.OAUTH_API_CODE_ENDPOINT || "/api/auth_code",
   },
   api: {
+    promUrl: "",
     collectionApiUrl:
       process.env.COLLECTION_API_URL || "http://collection-api:8000",
     searchApiUrl: process.env.SEARCH_API_URL || "http://search-api:8002",

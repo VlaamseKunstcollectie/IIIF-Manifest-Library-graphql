@@ -901,6 +901,25 @@ export const manifestLibraryQueries = gql`
   #   }
   # }
 
+  query GetCreateEntityForm($type: Entitytyping!) {
+    CreateEntityForm(type: $type) {
+      idPrefix
+      formFields {
+        ... on Manifest {
+          createFormFields {
+            title: metaData {
+              label(input: "metadata.labels.title")
+              key(input: "title")
+              inputField(type: baseTextField) {
+                ...inputfield
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
   #to do : Add LinkType for modal or route
   query GetMenu($name: String!) {
     Menu(name: $name) {

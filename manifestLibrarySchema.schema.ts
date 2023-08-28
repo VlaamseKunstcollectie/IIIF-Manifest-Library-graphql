@@ -15,6 +15,10 @@ export const manifestLibrarySchema = gql`
     manifest
   }
 
+  enum CreateableEntityTypes {
+    Manifest
+  }
+
   # Temporary fix
   interface Entity {
     id: String!
