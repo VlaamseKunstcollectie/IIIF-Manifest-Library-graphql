@@ -37,18 +37,6 @@ export const manifestLibraryQueries = gql`
     media {
       primary_transcode
     }
-    teaserMetadata: metadata(
-      keys: ["title", "object_number"]
-      excludeOrInclude: include
-    ) {
-      __typename
-      ... on Metadata {
-        ...metadata
-      }
-      ... on MetadataRelation {
-        ...metadataRelation
-      }
-    }
     title: metadata(keys: ["title"], excludeOrInclude: include) {
       __typename
       ... on Metadata {
@@ -471,27 +459,24 @@ export const manifestLibraryQueries = gql`
           ...minimalAsset
         }
         ... on Manifest {
-          teaserMetadata: metadata(
-            keys: ["title", "object_number", "manifest"]
-            excludeOrInclude: include
-          ) {
-            __typename
-            ... on Metadata {
-              key
-              value
-              label
-              immutable
+          teaserMetadata {
+            title: metaData {
+              label(input: "metadata.label.title")
+              key(input: "title")
             }
-            ... on MetadataRelation {
-              key
-              value
-              label
-              type
-              metadataOnRelation {
-                key
-                value
-              }
+            object_number: metaData {
+              label(input: "metadata.label.object_number")
+              key(input: "object_number")
             }
+            manifest: metaData {
+              label(input: "metadata.label.manifest")
+              key(input: "manifest")
+            }
+          }
+          intialValues {
+            title: keyValue(key: "title", source: metadata)
+            object_number: keyValue(key: "object_number", source: metadata)
+            manifest: keyValue(key: "manifest", source: metadata)
           }
           media {
             primaryMediafile
@@ -533,48 +518,26 @@ export const manifestLibraryQueries = gql`
               is_primary_thumbnail
             }
           }
-          teaserMetadata: metadata(
-            keys: ["filename"]
-            excludeOrInclude: include
-          ) {
-            __typename
-            ... on Metadata {
-              key
-              value
-              label
-              immutable
-            }
-            ... on MetadataRelation {
-              key
-              value
-              label
-              type
-              metadataOnRelation {
-                key
-                value
-              }
-            }
-          }
         }
         ... on BaseEntity {
-          teaserMetadata: metadata(keys: ["title", "object_number", "manifest"], excludeOrInclude: include) {
-            __typename
-            ... on Metadata {
-              key
-              value
-              label
-              immutable
+          teaserMetadata {
+            title: metaData {
+              label(input: "metadata.label.title")
+              key(input: "title")
             }
-            ... on MetadataRelation {
-              key
-              value
-              label
-              type
-              metadataOnRelation {
-                key
-                value
-              }
+            object_number: metaData {
+              label(input: "metadata.label.object_number")
+              key(input: "object_number")
             }
+            manifest: metaData {
+              label(input: "metadata.label.manifest")
+              key(input: "manifest")
+            }
+          }
+          intialValues {
+            title: keyValue(key: "title", source: metadata)
+            object_number: keyValue(key: "object_number", source: metadata)
+            manifest: keyValue(key: "manifest", source: metadata)
           }
         }
         ... on SavedSearchedEntity {
@@ -836,14 +799,24 @@ export const manifestLibraryQueries = gql`
       }
     }
     user
-    teaserMetadata: metadata(keys: ["title", "object_number", "manifest"], excludeOrInclude: include) {
-      __typename
-      ... on Metadata {
-        key
-        value
-        label
-        immutable
+    teaserMetadata {
+      title: metaData {
+        label(input: "metadata.label.title")
+        key(input: "title")
       }
+      object_number: metaData {
+        label(input: "metadata.label.object_number")
+        key(input: "object_number")
+      }
+      manifest: metaData {
+        label(input: "metadata.label.manifest")
+        key(input: "manifest")
+      }
+    }
+    intialValues {
+      title: keyValue(key: "title", source: metadata)
+      object_number: keyValue(key: "object_number", source: metadata)
+      manifest: keyValue(key: "manifest", source: metadata)
     }
     metadata(keys: [], excludeOrInclude: include) {
       __typename

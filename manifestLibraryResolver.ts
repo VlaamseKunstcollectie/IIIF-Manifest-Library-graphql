@@ -46,6 +46,9 @@ export const manifestLibraryResolver: Resolvers<ContextValue> = {
     entityView: async (parent: any, _args, { dataSources }) => {
       return parent;
     },
+    teaserMetadata: async (parent: any, _args, { dataSources }) => {
+      return parent;
+    },
   },
   Manifest: {
     media: async (parent: any, _args, { dataSources }) => {
@@ -87,6 +90,9 @@ export const manifestLibraryResolver: Resolvers<ContextValue> = {
       return parent;
     },
     entityView: async (parent: any, _args, { dataSources }) => {
+      return parent;
+    },
+    teaserMetadata: async (parent: any, _args, { dataSources }) => {
       return parent;
     },
   },
