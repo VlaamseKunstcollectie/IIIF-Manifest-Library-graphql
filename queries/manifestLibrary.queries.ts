@@ -13,7 +13,6 @@ export const manifestLibraryQueries = gql`
     acceptedEntityTypes
     validation
     options
-    optionsConfigKey
   }
 
   fragment metadataRelation on MetadataRelation {
@@ -816,7 +815,6 @@ export const manifestLibraryQueries = gql`
     acceptedEntityTypes
     validation
     options
-    optionsConfigKey
   }
 
   fragment savedSearch on SavedSearchedEntity {
@@ -897,11 +895,11 @@ export const manifestLibraryQueries = gql`
     }
   }
 
-  query GetCreateEntityForm($type: String!) {
-    GetCreateEntityForm(type: $type) {
-        idPrefix
-    }
-  }
+  # query GetCreateEntityForm($type: String!) {
+  #   GetCreateEntityForm(type: $type) {
+  #       idPrefix
+  #   }
+  # }
 
   #to do : Add LinkType for modal or route
   query GetMenu($name: String!) {

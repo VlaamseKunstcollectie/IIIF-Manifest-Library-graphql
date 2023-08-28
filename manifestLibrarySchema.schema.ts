@@ -23,10 +23,12 @@ export const manifestLibrarySchema = gql`
     metadata(
       keys: [String]!
       excludeOrInclude: ExcludeOrInclude!
+      options: [teaserMetadataOptions]
     ): [MetadataAndRelation]
+    teaserMetadata: teaserMetadata
     permission: [Permission]
     intialValues: IntialValues!
-    relationValues: RelationValues!
+    relationValues: RelationValues
     entityView: ColumnList!
   }
   #
@@ -38,16 +40,18 @@ export const manifestLibrarySchema = gql`
     metadata(
       keys: [String]!
       excludeOrInclude: ExcludeOrInclude!
+      options: [teaserMetadataOptions]
     ): [MetadataAndRelation]
     media: Media
-    teaserMetadata: [MetadataAndRelation]
+    teaserMetadata: teaserMetadata
     title: [MetadataAndRelation]
     permission: [Permission]
     intialValues: IntialValues!
-    relationValues: RelationValues!
+    relationValues: RelationValues
     entityView: ColumnList!
     advancedFilters: AdvancedFilters
     sortOptions: SortOptions
+    createFormFields: FormFields
   }
 
   type Manifest implements Entity {
@@ -57,15 +61,17 @@ export const manifestLibrarySchema = gql`
     metadata(
       keys: [String]!
       excludeOrInclude: ExcludeOrInclude!
+      options: [teaserMetadataOptions]
     ): [MetadataAndRelation]
     media: Media
-    teaserMetadata: [MetadataAndRelation]
+    teaserMetadata: teaserMetadata
     permission: [Permission]
     intialValues: IntialValues!
-    relationValues: RelationValues!
+    relationValues: RelationValues
     entityView: ColumnList!
     advancedFilters: AdvancedFilters
     sortOptions: SortOptions
+    createFormFields: FormFields
   }
 
   type ManifestEntity implements Entity {
@@ -75,16 +81,18 @@ export const manifestLibrarySchema = gql`
     metadata(
       keys: [String]!
       excludeOrInclude: ExcludeOrInclude!
+      options: [teaserMetadataOptions]
     ): [MetadataAndRelation]!
     media: Media
     form: Form
-    teaserMetadata: [MetadataAndRelation]
+    teaserMetadata: teaserMetadata
     permission: [Permission]
     intialValues: IntialValues!
-    relationValues: RelationValues!
+    relationValues: RelationValues
     entityView: ColumnList!
     advancedFilters: AdvancedFilters
     sortOptions: SortOptions
+    createFormFields: FormFields
   }
 
   type Mutation {
