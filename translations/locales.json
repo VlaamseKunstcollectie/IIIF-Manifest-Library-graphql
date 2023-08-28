@@ -178,7 +178,11 @@
         "panel-labels": {},
         "window-element-labels": {},
         "metadata": {
-            "labels": {}
+            "label": {
+              "title": "Title",
+              "object_number": "Object number",
+              "manifest": "Manifest"
+            }
         },
         "language":{
             "en": "English",
@@ -364,7 +368,11 @@
         "panel-labels": {},
         "window-element-labels": {},
         "metadata": {
-            "labels": {}
+            "label": {
+              "title": "Titel",
+              "object_number": "Object nummer",
+              "manifest": "Manifest"
+            }
         }
     }
 }
