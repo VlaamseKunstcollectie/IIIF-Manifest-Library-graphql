@@ -53,7 +53,10 @@ export const manifestLibraryQueries = gql`
     media {
       primary_transcode
     }
-    teaserMetadata: metadata(keys: ["title", "object_number"], excludeOrInclude: include) {
+    teaserMetadata: metadata(
+      keys: ["title", "object_number"]
+      excludeOrInclude: include
+    ) {
       __typename
       ... on Metadata {
         ...metadata
@@ -77,124 +80,6 @@ export const manifestLibraryQueries = gql`
         immutable
       }
     }
-    ... on Asset {
-      intialValues {
-        title: keyValue(key: "title", source: metadata)
-        date: keyValue(key: "date", source: metadata)
-        publisher: keyValue(key: "publisher", source: metadata)
-        object_number: keyValue(key: "object_number", source: metadata)
-      }
-      entityView {
-        column {
-          size(size: seventy)
-          elements {
-            entityListElement {
-              label(input: "Assets")
-            }
-            mediaFileElement {
-              label(input: "Media")
-            }
-          }
-        }
-        column2: column {
-          size(size: thirty)
-          elements {
-            windowElement {
-              label(input: "Metadata")
-              omschrijving: panels {
-                label(input: "Omschrijving")
-                panelType(input: metadata)
-                isEditable(input: true)
-                isCollapsed(input: false)
-                titel: metaData {
-                  label(input: "Titel")
-                  key(input: "title")
-                  inputField(type: baseTextField) {
-                    ...inputfield
-                  }
-                }
-                maker: metaData {
-                  label(input: "Maker")
-                  key(input: "maker")
-                  inputField(type: baseTextField) {
-                    ...inputfield
-                  }
-                }
-                datering: metaData {
-                  label(input: "Datering")
-                  key(input: "date")
-                  inputField(type: baseDateField) {
-                    ...inputfield
-                  }
-                }
-                collectie: metaData {
-                  label(input: "Soort collectie")
-                  key(input: "collecie")
-                }
-                publicatie: metaData {
-                  label(input: "Publicatie")
-                  key(input: "publisher")
-                }
-                Objectnummer: metaData {
-                  label(input: "Objectnummer")
-                  key(input: "object_number")
-                  inputField(type: baseTextField) {
-                    ...inputfield
-                  }
-                }
-              }
-              relations: panels {
-                label(input: "Relaties")
-                panelType(input: relation)
-                isEditable(input: false)
-                isCollapsed(input: false)
-                relation {
-                  label
-                  value
-                }
-              }
-              Mediainfo: panels {
-                label(input: "Mediainfo")
-                panelType(input: mediainfo)
-                isEditable(input: true)
-                isCollapsed(input: true)
-                filename: metaData {
-                  label(input: "Oorspronkelijke bestandsnaam")
-                  key(input: "filename")
-                  inputField(type: baseTextField) {
-                    ...inputfield
-                  }
-                }
-                mimetype: metaData {
-                  label(input: "Bestandstype")
-                  key(input: "mimetype")
-                  inputField(type: baseTextField) {
-                    ...inputfield
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-      media {
-        mediafiles {
-          _id
-          filename
-          original_file_location
-          transcode_filename
-          thumbnail_file_location
-          mimetype
-          isPublic
-          metadata {
-            key
-            value
-          }
-          is_primary
-          is_primary_thumbnail
-        }
-      }
-    }
     ... on Manifest {
       intialValues {
         title: keyValue(key: "title", source: metadata)
@@ -209,7 +94,10 @@ export const manifestLibraryQueries = gql`
         manifest: keyValue(key: "manifest", source: metadata)
         physical_location: keyValue(key: "physical_location", source: metadata)
         language: keyValue(key: "language", source: metadata)
-        digitization_project: keyValue(key: "digitization_project", source: metadata)
+        digitization_project: keyValue(
+          key: "digitization_project"
+          source: metadata
+        )
       }
       entityView {
         column {
@@ -633,16 +521,22 @@ export const manifestLibraryQueries = gql`
   query getAdvancedFilters($entityType: String!) {
     EntityTypeFilters(type: $entityType) {
       ... on BaseEntity {
-        advancedFilters{
+        advancedFilters {
           title: advancedFilter(key: "title", label: "Title", type: text) {
             label
             type
             key
           }
           type: advancedFilter(
-            key: "type", label: "Type", type: selection
+            key: "type"
+            label: "Type"
+            type: selection
             advancedFilterInputForRetrievingOptions: {
-              type: text, key: "type", value: "*", item_types: ["manifest"], provide_value_options_for_key: true
+              type: text
+              key: "type"
+              value: "*"
+              item_types: ["manifest"]
+              provide_value_options_for_key: true
             }
           ) {
             type
@@ -657,9 +551,15 @@ export const manifestLibraryQueries = gql`
             }
           }
           institution: advancedFilter(
-            key: "institution", label: "Institution", type: selection
+            key: "institution"
+            label: "Institution"
+            type: selection
             advancedFilterInputForRetrievingOptions: {
-              type: text, key: "institution", value: "*", item_types: ["manifest"], provide_value_options_for_key: true
+              type: text
+              key: "institution"
+              value: "*"
+              item_types: ["manifest"]
+              provide_value_options_for_key: true
             }
           ) {
             type
@@ -673,15 +573,25 @@ export const manifestLibraryQueries = gql`
               provide_value_options_for_key
             }
           }
-          keyword: advancedFilter(key: "keyword", label: "Keyword", type: text) {
+          keyword: advancedFilter(
+            key: "keyword"
+            label: "Keyword"
+            type: text
+          ) {
             label
             type
             key
           }
           rights: advancedFilter(
-            key: "rights", label: "Rights", type: selection
+            key: "rights"
+            label: "Rights"
+            type: selection
             advancedFilterInputForRetrievingOptions: {
-              type: text, key: "rights", value: "*", item_types: ["manifest"], provide_value_options_for_key: true
+              type: text
+              key: "rights"
+              value: "*"
+              item_types: ["manifest"]
+              provide_value_options_for_key: true
             }
           ) {
             type
@@ -695,10 +605,100 @@ export const manifestLibraryQueries = gql`
               provide_value_options_for_key
             }
           }
-          description: advancedFilter(key: "description", label: "Description", type: text) {
+          description: advancedFilter(
+            key: "description"
+            label: "Description"
+            type: text
+          ) {
             label
             type
             key
+          }
+          parent: advancedFilter(
+            key: "identifiers"
+            label: "metadata.labels.parent"
+            type: relation
+          ) {
+            label
+            type
+            key
+            defaultValue(value: "*")
+            hidden(value: true)
+          }
+        }
+      }
+      ... on Manifest {
+        advancedFilters {
+          title: advancedFilter(key: "title", label: "Title", type: text) {
+            label
+            type
+            key
+          }
+          type: advancedFilter(
+            key: "type"
+            label: "Type"
+            type: selection
+            advancedFilterInputForRetrievingOptions: {
+              type: text
+              key: "type"
+              value: "*"
+              item_types: ["manifest"]
+              provide_value_options_for_key: true
+            }
+          ) {
+            type
+            key
+            label
+            advancedFilterInputForRetrievingOptions {
+              type
+              key
+              value
+              item_types
+              provide_value_options_for_key
+            }
+          }
+          rights: advancedFilter(
+            key: "rights"
+            label: "Rights"
+            type: selection
+            advancedFilterInputForRetrievingOptions: {
+              type: text
+              key: "rights"
+              value: "*"
+              item_types: ["manifest"]
+              provide_value_options_for_key: true
+            }
+          ) {
+            type
+            key
+            label
+            advancedFilterInputForRetrievingOptions {
+              type
+              key
+              value
+              item_types
+              provide_value_options_for_key
+            }
+          }
+          description: advancedFilter(
+            key: "description"
+            label: "Description"
+            type: text
+          ) {
+            label
+            type
+            key
+          }
+          parent: advancedFilter(
+            key: "identifiers"
+            label: "metadata.labels.parent"
+            type: relation
+          ) {
+            label
+            type
+            key
+            defaultValue(value: "*")
+            hidden(value: true)
           }
         }
       }
@@ -716,7 +716,6 @@ export const manifestLibraryQueries = gql`
       ...fullEntityRecursive
     }
   }
-
 
   mutation postStartImport($folder: String!) {
     postStartImport(folder: $folder) {
@@ -763,7 +762,11 @@ export const manifestLibraryQueries = gql`
     }
   }
 
-  mutation deleteData($id: String!, $path: Collection!, $deleteMediafiles: Boolean!) {
+  mutation deleteData(
+    $id: String!
+    $path: Collection!
+    $deleteMediafiles: Boolean!
+  ) {
     deleteData(id: $id, path: $path, deleteMediafiles: $deleteMediafiles)
   }
 
@@ -914,30 +917,8 @@ export const manifestLibraryQueries = gql`
           }
           subMenu(name: "sub-menu-entities") {
             name
-            assets: menuItem(
-              label: "Assets"
-              typeLink: { route: { destination: "home" } }
-            ) {
-              label
-              typeLink {
-                route {
-                  destination
-                }
-              }
-            }
-            boeken: menuItem(
-              label: "Boeken"
-              typeLink: { route: { destination: "home" } }
-            ) {
-              label
-              typeLink {
-                route {
-                  destination
-                }
-              }
-            }
-            tijdschriften: menuItem(
-              label: "Tijdschriften"
+            manifests: menuItem(
+              label: "Manifests"
               typeLink: { route: { destination: "home" } }
             ) {
               label
@@ -951,7 +932,7 @@ export const manifestLibraryQueries = gql`
         }
         mirador: menuItem(
           label: "Mirador"
-          icon: BookOpen
+          icon: Focus
           isLoggedIn: false
           typeLink: { route: { destination: "mirador" } }
         ) {
@@ -961,36 +942,6 @@ export const manifestLibraryQueries = gql`
           typeLink {
             route {
               destination
-            }
-          }
-        }
-        mediafile: menuItem(
-          label: "Mediafile"
-          icon: Image
-          isLoggedIn: true
-          typeLink: { route: { destination: "mediafiles" } }
-        ) {
-          label
-          icon
-          isLoggedIn
-          typeLink {
-            route {
-              destination
-            }
-          }
-        }
-        upload: menuItem(
-          label: "Upload"
-          icon: Upload
-          isLoggedIn: true
-          typeLink: { modal: { typeModal: Upload } }
-        ) {
-          label
-          icon
-          isLoggedIn
-          typeLink {
-            modal {
-              typeModal
             }
           }
         }
@@ -1006,21 +957,6 @@ export const manifestLibraryQueries = gql`
           typeLink {
             modal {
               typeModal
-            }
-          }
-        }
-        jobs: menuItem(
-          label: "Jobs"
-          icon: History
-          isLoggedIn: true
-          typeLink: { route: { destination: "history" } }
-        ) {
-          label
-          icon
-          isLoggedIn
-          typeLink {
-            route {
-              destination
             }
           }
         }
@@ -1111,9 +1047,9 @@ export const manifestLibraryQueries = gql`
         sortOptions {
           options(
             input: [
-            { icon: NoIcon, label: "title", value: "title" }
-            { icon: NoIcon, label: "Creation Date", value: "date_created" }
-            { icon: NoIcon, label: "Date", value: "date" }
+              { icon: NoIcon, label: "title", value: "title" }
+              { icon: NoIcon, label: "Creation Date", value: "date_created" }
+              { icon: NoIcon, label: "Date", value: "date" }
             ]
           ) {
             icon
