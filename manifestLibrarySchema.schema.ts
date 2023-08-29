@@ -5,6 +5,7 @@ export const manifestLibrarySchema = gql`
     Home
     SingleEntity
     History
+    Mirador
   }
 
   enum Entitytyping {

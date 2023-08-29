@@ -9,7 +9,7 @@ export const manifestLibraryRoutes = [
       title: "Home",
       type: Collection.Entities,
       requiresAuth: false,
-      entityType: "BaseEntity"
+      entityType: "BaseEntity",
     },
     children: [
       {
@@ -26,10 +26,10 @@ export const manifestLibraryRoutes = [
     ],
   },
   {
-    path: "/history",
-    name: RouteNames.History,
-    component: "History",
-    meta: { title: "History", requiresAuth: true },
+    path: "/mirador",
+    name: RouteNames.Mirador,
+    component: "Mirador",
+    meta: { title: "Mirador", requiresAuth: false },
   },
   { path: "/home", redirect: "/" },
 ];
