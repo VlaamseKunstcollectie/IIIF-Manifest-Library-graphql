@@ -78,11 +78,6 @@
             "loading": "Loading",
             "add": "Add"
         },
-        "confirmation": {
-            "sure-message": "Are you sure you want to delete this?",
-            "cancel": "Cancel",
-            "confirm": "Confirm"
-        },
         "job-helper": {
             "finished": "finished",
             "failed": "failed",
@@ -171,9 +166,27 @@
             }
         },
         "confirm": {
-            "sure-message": "Are you sure you want to delete this?",
-            "delete-entity": "delete entity",
-            "delete-entity-mediafiles": "delete entity and mediafiles"
+            "discard-edit": {
+            "message": "Are you certain you wish leave the entity editor? Any unsaved changes will be discarded.",
+            "confirm": "Leave editor",
+            "cancel": "Cancel"
+            },
+            "delete-entity": {
+            "message": "Are you certain you wish to delete this entity?",
+            "confirm": "Delete entity",
+            "secondary-confirm": "Delete entity and mediafiles",
+            "cancel": "Cancel"
+            },
+            "discard-create": {
+            "message": "Are you certain you wish to exit the creation screen? Any unsaved changes will be discarded.",
+            "confirm": "Leave",
+            "cancel":"Cancel"
+            },
+            "discard-update": {
+            "message": "Are you certain you wish to stop editting? Any unsaved changes will be discarded",
+            "confirm": "Leave",
+            "cancel":"Cancel"
+            }
         },
         "panel-labels": {},
         "window-element-labels": {},
@@ -268,11 +281,6 @@
             "loading": "Laden",
             "add": "Toevoegen"
         },
-        "confirmation": {
-            "sure-message": "Ben je zeker dat je dit wilt verwijderen?",
-            "cancel": "Annuleren",
-            "confirm": "Bevestigen"
-        },
         "job-helper": {
             "finished": "klaar",
             "failed": "mislukt",
@@ -361,9 +369,27 @@
             }
         },
         "confirm": {
-            "sure-message": "Ben je zeker dat je dit wilt verwijderen?",
-            "delete-entity": "verwijder entiteit",
-            "delete-entity-mediafiles": "verwijder entiteit en media bestanden"
+            "discard-edit": {
+            "message": "Ben je zeker dat je de entiteit-editor wilt verlaten? Eventuele niet-opgeslagen wijzigingen zullen worden verwijderd.",
+            "confirm": "Verlaat editor",
+            "cancel": "Annuleren"
+            },
+            "delete-entity": {
+            "message": "Ben je zeker dat je deze entiteit wilt verwijderen?",
+            "confirm": "Verwijder entiteit",
+            "secondary-confirm": "Verwijder entiteit en media bestanden",
+            "cancel": "Annuleren"
+            },
+            "discard-create": {
+            "message": "Ben je zeker dat je het creatiescherm wilt verlaten? Eventuele niet-opgeslagen wijzigingen zullen worden verwijderd.",
+            "confirm": "Verlaten",
+            "cancel":"Annuleren"
+            },
+            "discard-update": {
+            "message": "Ben je zeker dat je wilt stoppen met bewerken? Eventuele niet-opgeslagen wijzigingen zullen worden verwijderd.",
+            "confirm": "Verlaten",
+            "cancel":"Annuleren"
+            }
         },
         "panel-labels": {},
         "window-element-labels": {},
