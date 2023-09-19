@@ -124,14 +124,13 @@ export const manifestLibraryQueries = gql`
         column {
           size(size: seventy)
           elements {
-            entityListElement {
-              isCollapsed(input: true)
-              label(input: "Assets")
-            }
-            mediaFileElement {
-              label(input: "Media")
-              type(input: media)
-            }
+              manifestView: entityListElement {
+                  label(input: "panel-labels.manifest-view")
+                  isCollapsed(input: false)
+                  metaKey(key: "manifest")
+                  entityTypes(input: [manifest])
+                  viewMode(input: Library)
+              }
           }
         }
         column2: column {
@@ -140,93 +139,93 @@ export const manifestLibraryQueries = gql`
             windowElement {
               label(input: "Metadata")
               omschrijving: panels {
-                label(input: "Omschrijving")
+                label(input: "panel-labels.description")
                 panelType(input: metadata)
                 isEditable(input: true)
                 isCollapsed(input: false)
                 titel: metaData {
-                  label(input: "Titel")
+                  label(input: "metadata.label.title")
                   key(input: "title")
                   inputField(type: baseTextField) {
                     ...inputfield
                   }
                 }
                 description: metaData {
-                  label(input: "Beschrijving")
+                  label(input: "metadata.label.description")
                   key(input: "description")
                   inputField(type: baseTextField) {
                     ...inputfield
                   }
                 }
                 rights: metaData {
-                  label(input: "Rechten")
+                  label(input: "metadata.label.rights")
                   key(input: "rights")
                   inputField(type: baseTextField) {
                     ...inputfield
                   }
                 }
                 naamsvermelding: metaData {
-                  label(input: "Naamsvermelding")
+                  label(input: "metadata.label.attribution")
                   key(input: "naamsvermelding")
                   inputField(type: baseTextField) {
                     ...inputfield
                   }
                 }
                 maker: metaData {
-                  label(input: "Maker")
+                  label(input: "metadata.label.creator")
                   key(input: "creator")
                   inputField(type: baseTextField) {
                     ...inputfield
                   }
                 }
                 datering: metaData {
-                  label(input: "Datering")
+                  label(input: "metadata.label.date")
                   key(input: "date")
                   inputField(type: baseDateField) {
                     ...inputfield
                   }
                 }
                 photographer: metaData {
-                  label(input: "Fotograaf")
+                  label(input: "metadata.label.photographer")
                   key(input: "photographer")
                 }
                 objectnummer: metaData {
-                  label(input: "Objectnummer")
+                  label(input: "metadata.label.object-number")
                   key(input: "object_number")
                   inputField(type: baseTextField) {
                     ...inputfield
                   }
                 }
                 location: metaData {
-                  label(input: "Locatie")
+                  label(input: "metadata.label.location")
                   key(input: "location")
                   inputField(type: baseTextField) {
                     ...inputfield
                   }
                 }
                 manifest: metaData {
-                  label(input: "Manifest")
+                  label(input: "metadata.label.manifest")
                   key(input: "manifest")
                   inputField(type: baseTextField) {
                     ...inputfield
                   }
                 }
                 physical_location: metaData {
-                  label(input: "Fysieke Locatie")
+                  label(input: "metadata.label.physical-location")
                   key(input: "physical_location")
                   inputField(type: baseTextField) {
                     ...inputfield
                   }
                 }
                 language: metaData {
-                  label(input: "Taal")
+                  label(input: "metadata.label.language")
                   key(input: "language")
                   inputField(type: baseTextField) {
                     ...inputfield
                   }
                 }
                 digitization_project: metaData {
-                  label(input: "Digitalisatie Project")
+                  label(input: "metadata.label.digitization-project")
                   key(input: "digitization_project")
                   inputField(type: baseTextField) {
                     ...inputfield
@@ -374,7 +373,7 @@ export const manifestLibraryQueries = gql`
               key(input: "title")
             }
             object_number: metaData {
-              label(input: "metadata.label.object_number")
+              label(input: "metadata.label.object-number")
               key(input: "object_number")
             }
             manifest: metaData {
@@ -435,7 +434,7 @@ export const manifestLibraryQueries = gql`
               key(input: "title")
             }
             object_number: metaData {
-              label(input: "metadata.label.object_number")
+              label(input: "metadata.label.object-number")
               key(input: "object_number")
             }
             manifest: metaData {
@@ -820,7 +819,7 @@ export const manifestLibraryQueries = gql`
         key(input: "title")
       }
       object_number: metaData {
-        label(input: "metadata.label.object_number")
+        label(input: "metadata.label.object-number")
         key(input: "object_number")
       }
       manifest: metaData {
@@ -883,12 +882,6 @@ export const manifestLibraryQueries = gql`
     }
   }
 
-  # query GetCreateEntityForm($type: String!) {
-  #   GetCreateEntityForm(type: $type) {
-  #       idPrefix
-  #   }
-  # }
-
   query GetCreateEntityForm($type: Entitytyping!) {
     CreateEntityForm(type: $type) {
       idSyntax {
@@ -917,7 +910,7 @@ export const manifestLibraryQueries = gql`
       menu {
         name
         entities: menuItem(
-          label: "Entities"
+          label: "navigation.entities"
           icon: BookOpen
           isLoggedIn: false
           typeLink: { route: { destination: "Home" } }
@@ -933,7 +926,7 @@ export const manifestLibraryQueries = gql`
           subMenu(name: "sub-menu-entities") {
             name
             manifests: menuItem(
-              label: "Manifests"
+              label: "navigation.manifests"
               typeLink: { route: { destination: "home" } }
             ) {
               label
@@ -946,7 +939,7 @@ export const manifestLibraryQueries = gql`
           }
         }
         mirador: menuItem(
-          label: "Mirador"
+          label: "navigation.mirador"
           icon: Focus
           isLoggedIn: false
           typeLink: { route: { destination: "mirador" } }
@@ -961,7 +954,7 @@ export const manifestLibraryQueries = gql`
           }
         }
         nieuw: menuItem(
-          label: "Nieuw"
+          label: "navigation.new"
           icon: Create
           isLoggedIn: true
           typeLink: { modal: { typeModal: Create } }
