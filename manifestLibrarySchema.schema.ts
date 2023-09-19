@@ -99,6 +99,11 @@ export const manifestLibrarySchema = gql`
     sortOptions: SortOptions
     createFormFields: FormFields
   }
+  
+  type Query {
+    CreateEntityForm(type: Entitytyping!): CreateEntityForm!
+    BulkOperationsRelationForm: WindowElement!
+  }
 
   type Mutation {
     createEntity(entity: EntityInput!): Entity

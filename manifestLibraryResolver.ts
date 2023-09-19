@@ -6,13 +6,14 @@ import {
 } from "../baseGraphql/resolvers/entityResolver";
 import { AssetForm } from "./sources/forms";
 import {
+  BaseEntity,
   ColumnSizes,
   Entity,
   Entitytyping,
   Media,
   Metadata,
   Permission,
-  Resolvers,
+  Resolvers, WindowElement,
 } from "../../generated-types/type-defs";
 
 export const manifestLibraryResolver: Resolvers<ContextValue> = {
@@ -96,6 +97,24 @@ export const manifestLibraryResolver: Resolvers<ContextValue> = {
       return parent;
     },
   },
+  Query: {
+    CreateEntityForm: async (_source, { type }, { dataSources }) => {
+      return {
+        idSyntax: {prefix: "", field: ""},
+        formFields: {
+          type,
+          createFormFields: {},
+        } as BaseEntity,
+      };
+    },
+    BulkOperationsRelationForm: async (
+        _source: any,
+        _args,
+        { dataSources }
+    ) => {
+      return {} as WindowElement;
+      },
+    },
   Mutation: {
     createEntity: async (_source, { entity }, { dataSources }) => {
       return {} as Entity;

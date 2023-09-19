@@ -4,12 +4,7 @@
     "emitDecoratorMetadata": true,
     "esModuleInterop": true,
     "experimentalDecorators": true,
-    "lib": [
-      "es6",
-      "esnext",
-      "es2015",
-      "DOM"
-    ],
+    "lib": ["es6", "esnext", "es2015", "DOM"],
     "module": "CommonJS",
     "moduleResolution": "node",
     "outDir": "./dist",
@@ -19,22 +14,11 @@
     "skipLibCheck": true,
     "baseUrl": "./",
     "paths": {
-      "*": [
-        "src/*"
-      ],
-      "graphql": [
-        "node_modules/graphql"
-      ]
+      "*": ["src/*"],
+      "graphql": ["node_modules/graphql"]
     }
   },
-  "exclude": [
-    "node_modules"
-  ],
-  "include": [
-    "./**/*.ts",
-    "./**/*.json"
-  ],
-  "files": [
-    "../../generated-types/type-defs.ts"
-  ]
+  "exclude": ["node_modules"],
+  "include": ["./**/*.ts", "./**/*.json"],
+  "files": ["../../generated-types/type-defs.ts"]
 }

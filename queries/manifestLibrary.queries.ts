@@ -69,8 +69,7 @@ export const manifestLibraryQueries = gql`
       }
     }
   }
-
-
+  
   fragment minimalTenant on Tenant {
     ...minimalBaseEntity
     media {
