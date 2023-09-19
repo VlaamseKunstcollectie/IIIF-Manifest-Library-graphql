@@ -747,6 +747,19 @@ export const manifestLibraryQueries = gql`
     }
   }
 
+  mutation BulkAddRelations(
+    $entityIds: [String!]!
+    $relationEntityId: String!
+    $relationType: String!
+  ) {
+    bulkAddRelations(
+      entityIds: $entityIds
+      relationEntityId: $relationEntityId
+      relationType: $relationType
+    )
+  }
+
+
   fragment savedSearch on SavedSearchedEntity {
     _key
     definition {
