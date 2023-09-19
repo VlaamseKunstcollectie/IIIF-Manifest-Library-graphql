@@ -994,16 +994,10 @@ export const manifestLibraryQueries = gql`
       options(
         input: [
           {
-            icon: DownloadAlt
-            label: "download mediafiles"
-            value: "downloadMediafiles"
-          }
-          {
             icon: DocumentInfo
-            label: "exporteer naar csv"
+            label: "bulk-operations.export-to-csv"
             value: "exportCsv"
           }
-          { icon: Edit, label: "bewerk", value: "edit" }
         ]
       ) {
         icon
