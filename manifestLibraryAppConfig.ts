@@ -44,6 +44,8 @@ export const manifestLibraryAppConfig: Environment = {
   },
   features: {
     hasSimpleSearch: false,
+    hasTenantSelect: false,
+    hasDirectoryImport: false
   },
   routerConfig: manifestLibraryRoutes,
   customization: {
