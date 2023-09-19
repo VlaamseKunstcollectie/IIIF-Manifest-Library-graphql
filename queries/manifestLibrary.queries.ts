@@ -70,6 +70,25 @@ export const manifestLibraryQueries = gql`
     }
   }
 
+
+  fragment minimalTenant on Tenant {
+    ...minimalBaseEntity
+    media {
+      primary_transcode
+    }
+    intialValues {
+      id: keyValue(key: "_id", source: root)
+      label: keyValue(key: "label", source: metadata)
+    }
+    teaserMetadata {
+      label: metaData {
+        label(input: "metadata.labels.name")
+        key(input: "label")
+      }
+    }
+  }
+
+
   fragment fullEntity on Entity {
     id
     type
@@ -444,6 +463,23 @@ export const manifestLibraryQueries = gql`
   #     limit
   #   }
   # }
+
+
+  query getTenants {
+    Tenants {
+      count
+      limit
+      results {
+        id
+        uuid
+        type
+        ... on Tenant {
+          ...minimalTenant
+        }
+      }
+    }
+  }
+
 
   query getEntityById($id: String!, $type: String!) {
     Entity(id: $id, type: $type) {
