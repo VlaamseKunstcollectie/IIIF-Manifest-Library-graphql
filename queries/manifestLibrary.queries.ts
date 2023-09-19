@@ -1031,4 +1031,21 @@ export const manifestLibraryQueries = gql`
   query getFilterOptions($input: AdvancedFilterInput!, $limit: Int!) {
     FilterOptions(input: $input, limit: $limit)
   }
+
+  query GetBulkOperationsRelationForm {
+    BulkOperationsRelationForm {
+      label(input: "bulk-operations.bulk-edit.bulk-edit-title")
+      relations: panels {
+        label(input: "bulk-operations.bulk-edit.relation-types")
+        panelType(input: metadata)
+        isEditable(input: true)
+        isCollapsed(input: false)
+        status: metaData {
+          label(input: "metadata.labels.ref-status")
+          key(input: "ref_status")
+        }
+      }
+    }
+  }
+
 `;
