@@ -124,12 +124,9 @@ export const manifestLibraryQueries = gql`
         column {
           size(size: seventy)
           elements {
-              manifestView: entityListElement {
+              manifestView: manifestViewerElement {
                   label(input: "panel-labels.manifest-view")
                   isCollapsed(input: false)
-                  metaKey(key: "manifest")
-                  entityTypes(input: [manifest])
-                  viewMode(input: Library)
               }
           }
         }
