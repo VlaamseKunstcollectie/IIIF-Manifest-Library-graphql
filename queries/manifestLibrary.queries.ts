@@ -11,8 +11,11 @@ export const manifestLibraryQueries = gql`
   fragment inputfield on InputField {
     type
     acceptedEntityTypes
-    validation
-    options
+    options {
+      icon
+      label
+      value
+    }
   }
 
   fragment metadataRelation on MetadataRelation {
@@ -547,7 +550,6 @@ export const manifestLibraryQueries = gql`
               key
               value
               item_types
-              provide_value_options_for_key
             }
           }
           institution: advancedFilter(
@@ -570,7 +572,6 @@ export const manifestLibraryQueries = gql`
               key
               value
               item_types
-              provide_value_options_for_key
             }
           }
           keyword: advancedFilter(
@@ -602,7 +603,6 @@ export const manifestLibraryQueries = gql`
               key
               value
               item_types
-              provide_value_options_for_key
             }
           }
           description: advancedFilter(
@@ -610,20 +610,9 @@ export const manifestLibraryQueries = gql`
             label: "Description"
             type: text
           ) {
-            label
-            type
-            key
-          }
-          parent: advancedFilter(
-            key: "identifiers"
-            label: "metadata.labels.parent"
-            type: relation
-          ) {
-            label
-            type
-            key
-            defaultValue(value: "*")
-            hidden(value: true)
+              label
+              type
+              key
           }
         }
       }
@@ -633,29 +622,6 @@ export const manifestLibraryQueries = gql`
             label
             type
             key
-          }
-          type: advancedFilter(
-            key: "type"
-            label: "Type"
-            type: selection
-            advancedFilterInputForRetrievingOptions: {
-              type: text
-              key: "type"
-              value: "*"
-              item_types: ["manifest"]
-              provide_value_options_for_key: true
-            }
-          ) {
-            type
-            key
-            label
-            advancedFilterInputForRetrievingOptions {
-              type
-              key
-              value
-              item_types
-              provide_value_options_for_key
-            }
           }
           rights: advancedFilter(
             key: "rights"
@@ -677,7 +643,6 @@ export const manifestLibraryQueries = gql`
               key
               value
               item_types
-              provide_value_options_for_key
             }
           }
           description: advancedFilter(
@@ -692,7 +657,7 @@ export const manifestLibraryQueries = gql`
           parent: advancedFilter(
             key: "identifiers"
             label: "metadata.labels.parent"
-            type: relation
+            type: selection
           ) {
             label
             type
@@ -700,6 +665,12 @@ export const manifestLibraryQueries = gql`
             defaultValue(value: "*")
             hidden(value: true)
           }
+          type: advancedFilter(type: type) {
+            type
+            defaultValue(value: "Manifest")
+            hidden(value: true)
+          }
+
         }
       }
     }
@@ -774,13 +745,6 @@ export const manifestLibraryQueries = gql`
     createEntity(entity: $data) {
       ...fullEntity
     }
-  }
-
-  fragment inputfield on InputField {
-    type
-    acceptedEntityTypes
-    validation
-    options
   }
 
   fragment savedSearch on SavedSearchedEntity {
@@ -879,7 +843,10 @@ export const manifestLibraryQueries = gql`
 
   query GetCreateEntityForm($type: Entitytyping!) {
     CreateEntityForm(type: $type) {
-      idPrefix
+      idSyntax {
+        prefix
+        field
+      }
       formFields {
         ... on Manifest {
           createFormFields {
