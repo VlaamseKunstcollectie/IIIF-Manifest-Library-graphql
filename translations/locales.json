@@ -110,6 +110,15 @@
                     "description": "Changes have been saved successfully"
                 }
             },
+            "errors": {
+                "validation-error": {
+                    "title": "Something's missing or incorrect"
+                },
+                "manifest-collection-error": {
+                    "title": "Something went wrong",
+                    "description": "Something went wrong while enqueuing entities for manifest collection"
+                }
+            },
             "graphql-errors": {
                 "duplicate": {
                     "title": "Duplicate",
@@ -137,7 +146,7 @@
                     "title": "Export failed"
                 }
             },
-            "download-mediafiles": "Download mediafiles",
+            "add-to-mirador-collection": "Add to Mirador viewer collection",
             "export-to-csv": "Export to CSV"
         },
         "dropdown": {
@@ -333,6 +342,15 @@
                     "description": "Wijzigingen succesvol opgeslagen"
                 }
             },
+            "errors": {
+                "validation-error": {
+                    "title": "Iets ontbreekt of is niet juist."
+                },
+                "manifest-collection-error": {
+                    "title": "Er is iets misgegaan",
+                    "description": "Er ging iets verkeerd bij het toevogen van deze entiteiten aan de manifest collectie"
+                }
+            },
             "graphql-errors": {
                 "duplicate": {
                     "title": "Duplicaat",
@@ -360,7 +378,7 @@
                     "title": "Export mislukt"
                 }
             },
-            "download-mediafiles": "Download media bestanden",
+            "add-to-mirador-collection": "Toevoegen aan Mirador viewer collectie",
             "export-to-csv": "Exporteer naar CSV"
         },
         "dropdown": {

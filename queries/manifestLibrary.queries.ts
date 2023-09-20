@@ -989,6 +989,11 @@ export const manifestLibraryQueries = gql`
             label: "bulk-operations.export-to-csv"
             value: "exportCsv"
           }
+          {
+            icon: Focus
+            label: "bulk-operations.add-to-mirador-collection"
+            value: "addToMiradorViewerCollection"
+          }
         ]
       ) {
         icon
