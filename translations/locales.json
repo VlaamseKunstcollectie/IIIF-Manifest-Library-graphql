@@ -216,7 +216,9 @@
             "en": "English",
             "nl": "Dutch"
         },
-        "manifestViewer": {
+        "manifest-viewer": {
+            "remove-from-mirador-collection": "Remove from Mirador viewer collection",
+            "add-to-mirador-collection": "Add to Mirador viewer collection",
             "no-manifest": "Manifest could not be found"
         }
     },
@@ -434,6 +436,8 @@
             }
         },
         "manifest-viewer": {
+            "remove-from-mirador-collection": "Verwijder uit Mirador viewer collectie",
+            "add-to-mirador-collection": "Toevoegen aan Mirador viewer collectie",
             "no-manifest": "Manifest kon niet gevonden worden"
         }
     }
