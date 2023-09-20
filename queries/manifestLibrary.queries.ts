@@ -112,7 +112,7 @@ export const manifestLibraryQueries = gql`
         naamsvermelding: keyValue(key: "naamsvermelding", source: metadata)
         object_number: keyValue(key: "object_number", source: metadata)
         location: keyValue(key: "location", source: metadata)
-        manifest: keyValue(key: "manifest", source: metadata)
+        manifest_url: keyValue(key: "manifest_url", source: metadata)
         physical_location: keyValue(key: "physical_location", source: metadata)
         language: keyValue(key: "language", source: metadata)
         digitization_project: keyValue(
@@ -127,7 +127,7 @@ export const manifestLibraryQueries = gql`
               manifestView: manifestViewerElement {
                 label(input: "panel-labels.manifest-view")
                 isCollapsed(input: false)
-                manifestUrl(metadataKey: "manifest")
+                manifestUrl(metadataKey: "manifest_url")
               }
           }
         }
@@ -201,9 +201,9 @@ export const manifestLibraryQueries = gql`
                     ...inputfield
                   }
                 }
-                manifest: metaData {
+                manifest_url: metaData {
                   label(input: "metadata.label.manifest")
-                  key(input: "manifest")
+                  key(input: "manifest_url")
                   inputField(type: baseTextField) {
                     ...inputfield
                   }
@@ -374,15 +374,15 @@ export const manifestLibraryQueries = gql`
               label(input: "metadata.label.object-number")
               key(input: "object_number")
             }
-            manifest: metaData {
+            manifest_url: metaData {
               label(input: "metadata.label.manifest")
-              key(input: "manifest")
+              key(input: "manifest_url")
             }
           }
           intialValues {
             title: keyValue(key: "title", source: metadata)
             object_number: keyValue(key: "object_number", source: metadata)
-            manifest: keyValue(key: "manifest", source: metadata)
+            manifest_url: keyValue(key: "manifest_url", source: metadata)
           }
           media {
             primaryMediafile
