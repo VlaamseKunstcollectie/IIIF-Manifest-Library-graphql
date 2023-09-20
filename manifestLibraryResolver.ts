@@ -74,12 +74,6 @@ export const manifestLibraryResolver: Resolvers<ContextValue> = {
     },
     metadata: async (parent: any, { keys, excludeOrInclude }) => {
       const metadata = await resolveMetadata(parent, keys, excludeOrInclude);
-      metadata.push({
-        key: "manifest",
-        value: parent.data.id || parent.data["@id"],
-        label: "manifest",
-      });
-      console.log(metadata);
       return metadata;
     },
     permission: async (parent: any, _args, { dataSources }) => {

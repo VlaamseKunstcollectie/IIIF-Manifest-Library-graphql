@@ -125,8 +125,9 @@ export const manifestLibraryQueries = gql`
           size(size: seventy)
           elements {
               manifestView: manifestViewerElement {
-                  label(input: "panel-labels.manifest-view")
-                  isCollapsed(input: false)
+                label(input: "panel-labels.manifest-view")
+                isCollapsed(input: false)
+                manifestUrl(metadataKey: "manifest")
               }
           }
         }

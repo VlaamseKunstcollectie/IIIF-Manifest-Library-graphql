@@ -215,6 +215,9 @@
         "language":{
             "en": "English",
             "nl": "Dutch"
+        },
+        "manifestViewer": {
+            "no-manifest": "Manifest could not be found"
         }
     },
     "nl": {
@@ -429,6 +432,9 @@
                 "language": "Taal",
                 "digitization-project": "Digitalisatie project"
             }
+        },
+        "manifest-viewer": {
+            "no-manifest": "Manifest kon niet gevonden worden"
         }
     }
 }
