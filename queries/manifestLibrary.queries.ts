@@ -995,6 +995,24 @@ export const manifestLibraryQueries = gql`
           }
         }
       }
+      ... on Manifest {
+        sortOptions {
+          options(
+            input: [
+              { icon: NoIcon, label: "metadata.label.title", value: "title" }
+              {
+                icon: NoIcon
+                label: "metadata.label.manifest"
+                value: "manifest_url"
+              }
+            ]
+          ) {
+            icon
+            label
+            value
+          }
+        }
+      }
     }
   }
 
