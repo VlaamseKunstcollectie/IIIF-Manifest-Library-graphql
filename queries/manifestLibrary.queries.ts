@@ -397,9 +397,13 @@ export const manifestLibraryQueries = gql`
     }
   }
 
-  query getEntityById($id: String!, $type: String!) {
-    Entity(id: $id, type: $type) {
-      ...fullEntityRecursive
+  query getEntityById(
+    $id: String!
+    $type: String!
+    $preferredLanguage: String
+  ) {
+    Entity(id: $id, type: $type, preferredLanguage: $preferredLanguage) {
+      ...fullEntity
     }
   }
 
