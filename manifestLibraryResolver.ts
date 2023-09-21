@@ -1,32 +1,26 @@
 import { ContextValue } from "base-graphql";
-import {
-  resolveMedia,
-  resolveMetadata,
-  resolvePermission,
-} from "../baseGraphql/resolvers/entityResolver";
-import { AssetForm } from "./sources/forms";
+import { resolveMedia } from "../baseGraphql/resolvers/entityResolver";
 import {
   BaseEntity,
-  ColumnSizes,
   Entity,
-  Entitytyping, ExcludeOrInclude,
+  Entitytyping,
   Media,
-  Metadata,
   Permission,
-  Resolvers, WindowElement,
+  Resolvers,
+  WindowElement,
 } from "../../generated-types/type-defs";
 
 export const manifestLibraryResolver: Resolvers<ContextValue> = {
   Entity: {
     __resolveType(obj) {
       if (obj.type == Entitytyping.Asset) {
-        return 'Asset';
+        return "Asset";
       } else if (obj.type == Entitytyping.Mediafile) {
-        return 'MediaFileEntity';
+        return "MediaFileEntity";
       } else if (obj.type == Entitytyping.Manifest) {
-        return 'Manifest';
+        return "Manifest";
       }
-      return 'BaseEntity';
+      return "BaseEntity";
     },
   },
   Asset: {

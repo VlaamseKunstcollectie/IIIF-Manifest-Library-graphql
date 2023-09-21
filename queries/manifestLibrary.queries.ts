@@ -976,7 +976,10 @@ export const manifestLibraryQueries = gql`
   }
 
   query getFilterOptions($input: AdvancedFilterInput!, $limit: Int!) {
-    FilterOptions(input: $input, limit: $limit)
+    FilterOptions(input: $input, limit: $limit) {
+      label
+      value
+    }
   }
 
   query GetBulkOperationsRelationForm {
