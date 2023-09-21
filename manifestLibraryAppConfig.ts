@@ -45,12 +45,13 @@ export const manifestLibraryAppConfig: Environment = {
   features: {
     hasSimpleSearch: false,
     hasTenantSelect: false,
-    hasDirectoryImport: false
+    hasDirectoryImport: false,
   },
   routerConfig: manifestLibraryRoutes,
   customization: {
     applicationTitle: "VKC Manifest Library",
-    applicationLocale: 'nl',
+    applicationLocale: "nl",
+    hideEmptyFields: true,
   },
   bulkSelectAllSizeLimit: 100,
   damsFrontend:
