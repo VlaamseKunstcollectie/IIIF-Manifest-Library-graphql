@@ -375,13 +375,6 @@ export const manifestLibraryQueries = gql`
     }
   }
 
-  # query getAdvancedEntities($filters: [AdvancedSearchInput]!) {
-  #   Entities(filters: $filters) {
-  #     count
-  #     limit
-  #   }
-  # }
-
   query getTenants {
     Tenants {
       count
@@ -481,15 +474,22 @@ export const manifestLibraryQueries = gql`
     EntityTypeFilters(type: $entityType) {
       ... on BaseEntity {
         advancedFilters {
-          title: advancedFilter(key: "title", label: "Title", type: text) {
+          title: advancedFilter(
+            key: "title"
+            label: "Title"
+            type: text
+            isDisplayedByDefault: true
+          ) {
             label
             type
             key
+            isDisplayedByDefault
           }
           type: advancedFilter(
             key: "type"
             label: "Type"
             type: selection
+            isDisplayedByDefault: true
             advancedFilterInputForRetrievingOptions: {
               type: text
               key: "type"
@@ -501,6 +501,7 @@ export const manifestLibraryQueries = gql`
             type
             key
             label
+            isDisplayedByDefault
             advancedFilterInputForRetrievingOptions {
               type
               key
@@ -512,6 +513,7 @@ export const manifestLibraryQueries = gql`
             key: "institution"
             label: "Institution"
             type: selection
+            isDisplayedByDefault: true
             advancedFilterInputForRetrievingOptions: {
               type: text
               key: "institution"
@@ -523,6 +525,7 @@ export const manifestLibraryQueries = gql`
             type
             key
             label
+            isDisplayedByDefault
             advancedFilterInputForRetrievingOptions {
               type
               key
@@ -534,15 +537,18 @@ export const manifestLibraryQueries = gql`
             key: "keyword"
             label: "Keyword"
             type: text
+            isDisplayedByDefault: true
           ) {
             label
             type
             key
+            isDisplayedByDefault
           }
           rights: advancedFilter(
             key: "rights"
             label: "Rights"
             type: selection
+            isDisplayedByDefault: true
             advancedFilterInputForRetrievingOptions: {
               type: text
               key: "rights"
@@ -554,6 +560,7 @@ export const manifestLibraryQueries = gql`
             type
             key
             label
+            isDisplayedByDefault
             advancedFilterInputForRetrievingOptions {
               type
               key
@@ -565,24 +572,33 @@ export const manifestLibraryQueries = gql`
             key: "description"
             label: "Description"
             type: text
+            isDisplayedByDefault: true
           ) {
             label
             type
             key
+            isDisplayedByDefault
           }
         }
       }
       ... on Manifest {
         advancedFilters {
-          title: advancedFilter(key: "title", label: "Title", type: text) {
+          title: advancedFilter(
+            key: "title"
+            label: "Title"
+            type: text
+            isDisplayedByDefault: true
+          ) {
             label
             type
             key
+            isDisplayedByDefault
           }
           rights: advancedFilter(
             key: "rights"
             label: "Rights"
             type: selection
+            isDisplayedByDefault: true
             advancedFilterInputForRetrievingOptions: {
               type: text
               key: "rights"
@@ -594,6 +610,7 @@ export const manifestLibraryQueries = gql`
             type
             key
             label
+            isDisplayedByDefault
             advancedFilterInputForRetrievingOptions {
               type
               key
@@ -605,10 +622,12 @@ export const manifestLibraryQueries = gql`
             key: "description"
             label: "Description"
             type: text
+            isDisplayedByDefault: true
           ) {
             label
             type
             key
+            isDisplayedByDefault
           }
           parent: advancedFilter(
             key: "identifiers"
@@ -623,7 +642,7 @@ export const manifestLibraryQueries = gql`
           }
           type: advancedFilter(type: type) {
             type
-            defaultValue(value: "Manifest")
+            defaultValue(value: "manifest")
             hidden(value: true)
           }
         }

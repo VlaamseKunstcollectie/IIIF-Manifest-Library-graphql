@@ -9,7 +9,7 @@ export const manifestLibraryRoutes = [
       title: "Home",
       type: Collection.Entities,
       requiresAuth: false,
-      entityType: "BaseEntity",
+      entityType: "manifest",
     },
     children: [
       {
