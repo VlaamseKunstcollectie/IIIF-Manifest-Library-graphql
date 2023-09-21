@@ -69,7 +69,7 @@ export const manifestLibraryQueries = gql`
       }
     }
   }
-  
+
   fragment minimalTenant on Tenant {
     ...minimalBaseEntity
     media {
@@ -86,7 +86,6 @@ export const manifestLibraryQueries = gql`
       }
     }
   }
-
 
   fragment fullEntity on Entity {
     id
@@ -124,11 +123,12 @@ export const manifestLibraryQueries = gql`
         column {
           size(size: seventy)
           elements {
-              manifestView: manifestViewerElement {
-                label(input: "panel-labels.manifest-view")
-                isCollapsed(input: false)
-                manifestUrl(metadataKey: "manifest_url")
-              }
+            manifestView: manifestViewerElement {
+              label(input: "panel-labels.manifest-view")
+              isCollapsed(input: false)
+              manifestUrl(metadataKey: "manifest_url")
+              manifestVersion(metadataKey: "manifest_version")
+            }
           }
         }
         column2: column {
@@ -460,7 +460,6 @@ export const manifestLibraryQueries = gql`
   #   }
   # }
 
-
   query getTenants {
     Tenants {
       count
@@ -475,7 +474,6 @@ export const manifestLibraryQueries = gql`
       }
     }
   }
-
 
   query getEntityById($id: String!, $type: String!) {
     Entity(id: $id, type: $type) {
@@ -642,9 +640,9 @@ export const manifestLibraryQueries = gql`
             label: "Description"
             type: text
           ) {
-              label
-              type
-              key
+            label
+            type
+            key
           }
         }
       }
@@ -702,7 +700,6 @@ export const manifestLibraryQueries = gql`
             defaultValue(value: "Manifest")
             hidden(value: true)
           }
-
         }
       }
     }
@@ -790,7 +787,6 @@ export const manifestLibraryQueries = gql`
       relationType: $relationType
     )
   }
-
 
   fragment savedSearch on SavedSearchedEntity {
     _key
@@ -1085,5 +1081,4 @@ export const manifestLibraryQueries = gql`
       }
     }
   }
-
 `;
