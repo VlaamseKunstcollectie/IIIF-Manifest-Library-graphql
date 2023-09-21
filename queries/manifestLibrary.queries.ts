@@ -991,8 +991,8 @@ export const manifestLibraryQueries = gql`
           }
           {
             icon: Focus
-            label: "bulk-operations.add-to-mirador-collection"
-            value: "addToMiradorViewerCollection"
+            label: "bulk-operations.add-to-manifest-collection"
+            value: "addToManifestViewerCollection"
           }
         ]
       ) {

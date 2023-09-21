@@ -146,7 +146,7 @@
                     "title": "Export failed"
                 }
             },
-            "add-to-mirador-collection": "Add to Mirador viewer collection",
+            "add-to-manifest-collection": "Add to Manifest viewer collection",
             "export-to-csv": "Export to CSV"
         },
         "dropdown": {
@@ -226,8 +226,8 @@
             "nl": "Dutch"
         },
         "manifest-viewer": {
-            "remove-from-mirador-collection": "Remove from Mirador viewer collection",
-            "add-to-mirador-collection": "Add to Mirador viewer collection",
+            "remove-from-manifest-collection": "Remove from Manifest viewer collection",
+            "add-to-manifest-collection": "Add to Manifest viewer collection",
             "no-manifest": "Manifest could not be found"
         }
     },
@@ -378,7 +378,7 @@
                     "title": "Export mislukt"
                 }
             },
-            "add-to-mirador-collection": "Toevoegen aan Mirador viewer collectie",
+            "add-to-manifest-collection": "Toevoegen aan Manifest viewer collectie",
             "export-to-csv": "Exporteer naar CSV"
         },
         "dropdown": {
@@ -454,8 +454,8 @@
             }
         },
         "manifest-viewer": {
-            "remove-from-mirador-collection": "Verwijder uit Mirador viewer collectie",
-            "add-to-mirador-collection": "Toevoegen aan Mirador viewer collectie",
+            "remove-from-manifest-collection": "Verwijder uit Manifest viewer collectie",
+            "add-to-manifest-collection": "Toevoegen aan Manifest viewer collectie",
             "no-manifest": "Manifest kon niet gevonden worden"
         }
     }
