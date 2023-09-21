@@ -40,13 +40,13 @@ export const manifestLibraryQueries = gql`
     media {
       primary_transcode
     }
-    title: metadata(keys: ["title"], excludeOrInclude: include) {
-      __typename
-      ... on Metadata {
-        ...metadata
-      }
-      ... on MetadataRelation {
-        ...metadataRelation
+    intialValues {
+      title: keyValue(key: "title", source: metadata)
+    }
+    teaserMetadata {
+      title: metaData {
+        label(input: "metadata.labels.title")
+        key(input: "title")
       }
     }
   }
@@ -56,16 +56,13 @@ export const manifestLibraryQueries = gql`
     media {
       primary_transcode
     }
-    teaserMetadata: metadata(
-      keys: ["title", "object_number"]
-      excludeOrInclude: include
-    ) {
-      __typename
-      ... on Metadata {
-        ...metadata
-      }
-      ... on MetadataRelation {
-        ...metadataRelation
+    intialValues {
+      title: keyValue(key: "title", source: metadata)
+    }
+    teaserMetadata {
+      title: metaData {
+        label(input: "metadata.labels.title")
+        key(input: "title")
       }
     }
   }
@@ -91,15 +88,6 @@ export const manifestLibraryQueries = gql`
     id
     type
     permission
-    title: metadata(keys: ["title"], excludeOrInclude: include) {
-      __typename
-      ... on Metadata {
-        key
-        value
-        label
-        immutable
-      }
-    }
     ... on Manifest {
       intialValues {
         title: keyValue(key: "title", source: metadata)
@@ -268,72 +256,6 @@ export const manifestLibraryQueries = gql`
           }
           is_primary
           is_primary_thumbnail
-        }
-      }
-    }
-  }
-
-  fragment fullEntityRecursive on Entity {
-    ...fullEntity
-    metadata(keys: ["title"], excludeOrInclude: exclude) {
-      __typename
-      ... on Metadata {
-        ...metadata
-      }
-      ... on MetadataRelation {
-        ...metadataRelation
-        linkedEntity {
-          ... on Asset {
-            ...minimalBaseEntity
-            media {
-              primary_transcode
-            }
-            teaserMetadata: metadata(
-              keys: ["title", "object_number"]
-              excludeOrInclude: include
-            ) {
-              __typename
-              ... on Metadata {
-                ...metadata
-              }
-              ... on MetadataRelation {
-                ...metadataRelation
-              }
-            }
-          }
-          ... on MediaFileEntity {
-            ...minimalBaseEntity
-            media {
-              primary_transcode
-            }
-            teaserMetadata: metadata(
-              keys: ["title", "object_number"]
-              excludeOrInclude: include
-            ) {
-              __typename
-              ... on Metadata {
-                ...metadata
-              }
-              ... on MetadataRelation {
-                ...metadataRelation
-              }
-            }
-          }
-          ... on BaseEntity {
-            ...minimalBaseEntity
-            teaserMetadata: metadata(
-              keys: ["title", "object_number"]
-              excludeOrInclude: include
-            ) {
-              __typename
-              ... on Metadata {
-                ...metadata
-              }
-              ... on MetadataRelation {
-                ...metadataRelation
-              }
-            }
-          }
         }
       }
     }
@@ -713,7 +635,7 @@ export const manifestLibraryQueries = gql`
 
   mutation mutateEntityValues($id: String!, $formInput: EntityFormInput!) {
     mutateEntityValues(id: $id, formInput: $formInput) {
-      ...fullEntityRecursive
+      ...fullEntity
     }
   }
 
@@ -825,15 +747,6 @@ export const manifestLibraryQueries = gql`
       title: keyValue(key: "title", source: metadata)
       object_number: keyValue(key: "object_number", source: metadata)
       manifest: keyValue(key: "manifest", source: metadata)
-    }
-    metadata(keys: [], excludeOrInclude: include) {
-      __typename
-      ... on Metadata {
-        key
-        value
-        label
-        immutable
-      }
     }
   }
 

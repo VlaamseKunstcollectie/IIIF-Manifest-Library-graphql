@@ -25,11 +25,6 @@ export const manifestLibrarySchema = gql`
     id: String!
     uuid: String!
     type: String!
-    metadata(
-      keys: [String]!
-      excludeOrInclude: ExcludeOrInclude!
-      options: [teaserMetadataOptions]
-    ): [MetadataAndRelation]
     teaserMetadata: teaserMetadata
     permission: [Permission]
     intialValues: IntialValues!
@@ -42,11 +37,6 @@ export const manifestLibrarySchema = gql`
     id: String!
     uuid: String!
     type: String!
-    metadata(
-      keys: [String]!
-      excludeOrInclude: ExcludeOrInclude!
-      options: [teaserMetadataOptions]
-    ): [MetadataAndRelation]
     media: Media
     teaserMetadata: teaserMetadata
     title: [MetadataAndRelation]
@@ -63,11 +53,6 @@ export const manifestLibrarySchema = gql`
     id: String!
     uuid: String!
     type: String!
-    metadata(
-      keys: [String]!
-      excludeOrInclude: ExcludeOrInclude!
-      options: [teaserMetadataOptions]
-    ): [MetadataAndRelation]
     media: Media
     teaserMetadata: teaserMetadata
     permission: [Permission]
@@ -83,11 +68,6 @@ export const manifestLibrarySchema = gql`
     id: String!
     uuid: String!
     type: String!
-    metadata(
-      keys: [String]!
-      excludeOrInclude: ExcludeOrInclude!
-      options: [teaserMetadataOptions]
-    ): [MetadataAndRelation]!
     media: Media
     form: Form
     teaserMetadata: teaserMetadata
@@ -99,7 +79,7 @@ export const manifestLibrarySchema = gql`
     sortOptions: SortOptions
     createFormFields: FormFields
   }
-  
+
   type Query {
     CreateEntityForm(type: Entitytyping!): CreateEntityForm!
     BulkOperationsRelationForm: WindowElement!

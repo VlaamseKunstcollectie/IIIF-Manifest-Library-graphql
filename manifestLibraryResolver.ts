@@ -33,9 +33,6 @@ export const manifestLibraryResolver: Resolvers<ContextValue> = {
     media: async (parent: any, _args, { dataSources }) => {
       return resolveMedia(dataSources, parent);
     },
-    metadata: async (parent: any, { keys, excludeOrInclude }) => {
-      return await resolveMetadata(parent, keys, excludeOrInclude);
-    },
     permission: async (parent: any, _args, { dataSources }) => {
       // Todo fix permissions
       // return resolvePermission(dataSources, parent.id);
@@ -53,10 +50,16 @@ export const manifestLibraryResolver: Resolvers<ContextValue> = {
   },
   Manifest: {
     media: async (parent: any, _args, { dataSources }) => {
-      let thumbnail_file_location = parent.data.sequences?.[0].canvases[0].images?.[0].resource?.service?.["@id"]
-      if (thumbnail_file_location) thumbnail_file_location += "/full/400,/0/default.jpg";
+      let thumbnail_file_location =
+        parent.data.sequences?.[0].canvases[0].images?.[0].resource?.service?.[
+          "@id"
+        ];
+      if (thumbnail_file_location)
+        thumbnail_file_location += "/full/400,/0/default.jpg";
       else {
-         thumbnail_file_location = parent.data.items?.[0].thumbnail[0].id || parent.data.sequences?.[0].canvases[0].thumbnail?.["@id"];
+        thumbnail_file_location =
+          parent.data.items?.[0].thumbnail[0].id ||
+          parent.data.sequences?.[0].canvases[0].thumbnail?.["@id"];
       }
       const media: Media = {
         mediafiles: [
@@ -69,10 +72,6 @@ export const manifestLibraryResolver: Resolvers<ContextValue> = {
         ],
       };
       return media;
-    },
-    metadata: async (parent: any, { keys, excludeOrInclude }) => {
-      const metadata = await resolveMetadata(parent, keys, excludeOrInclude);
-      return metadata;
     },
     permission: async (parent: any, _args, { dataSources }) => {
       // Todo fix permissions
@@ -92,7 +91,7 @@ export const manifestLibraryResolver: Resolvers<ContextValue> = {
   Query: {
     CreateEntityForm: async (_source, { type }, { dataSources }) => {
       return {
-        idSyntax: {prefix: "", field: ""},
+        idSyntax: { prefix: "", field: "" },
         formFields: {
           type,
           createFormFields: {},
@@ -100,13 +99,13 @@ export const manifestLibraryResolver: Resolvers<ContextValue> = {
       };
     },
     BulkOperationsRelationForm: async (
-        _source: any,
-        _args,
-        { dataSources }
+      _source: any,
+      _args,
+      { dataSources }
     ) => {
       return {} as WindowElement;
-      },
     },
+  },
   Mutation: {
     createEntity: async (_source, { entity }, { dataSources }) => {
       return {} as Entity;
