@@ -470,185 +470,167 @@ export const manifestLibraryQueries = gql`
     }
   }
 
-  query getAdvancedFilters($entityType: String!) {
-    EntityTypeFilters(type: $entityType) {
-      ... on BaseEntity {
-        advancedFilters {
-          title: advancedFilter(
-            key: "title"
-            label: "Title"
-            type: text
-            isDisplayedByDefault: true
-          ) {
-            label
-            type
-            key
-            isDisplayedByDefault
-          }
-          type: advancedFilter(
-            key: "type"
-            label: "Type"
-            type: selection
-            isDisplayedByDefault: true
-            advancedFilterInputForRetrievingOptions: {
-              type: text
-              key: "type"
-              value: "*"
-              item_types: ["manifest"]
-              provide_value_options_for_key: true
-            }
-          ) {
-            type
-            key
-            label
-            isDisplayedByDefault
-            advancedFilterInputForRetrievingOptions {
-              type
-              key
-              value
-              item_types
-            }
-          }
-          institution: advancedFilter(
-            key: "institution"
-            label: "Institution"
-            type: selection
-            isDisplayedByDefault: true
-            advancedFilterInputForRetrievingOptions: {
-              type: text
-              key: "institution"
-              value: "*"
-              item_types: ["manifest"]
-              provide_value_options_for_key: true
-            }
-          ) {
-            type
-            key
-            label
-            isDisplayedByDefault
-            advancedFilterInputForRetrievingOptions {
-              type
-              key
-              value
-              item_types
-            }
-          }
-          keyword: advancedFilter(
-            key: "keyword"
-            label: "Keyword"
-            type: text
-            isDisplayedByDefault: true
-          ) {
-            label
-            type
-            key
-            isDisplayedByDefault
-          }
-          rights: advancedFilter(
-            key: "rights"
-            label: "Rights"
-            type: selection
-            isDisplayedByDefault: true
-            advancedFilterInputForRetrievingOptions: {
-              type: text
-              key: "rights"
-              value: "*"
-              item_types: ["manifest"]
-              provide_value_options_for_key: true
-            }
-          ) {
-            type
-            key
-            label
-            isDisplayedByDefault
-            advancedFilterInputForRetrievingOptions {
-              type
-              key
-              value
-              item_types
-            }
-          }
-          description: advancedFilter(
-            key: "description"
-            label: "Description"
-            type: text
-            isDisplayedByDefault: true
-          ) {
-            label
-            type
-            key
-            isDisplayedByDefault
-          }
+query getAdvancedFilters($entityType: String!) {
+  EntityTypeFilters(type: $entityType) {
+    ... on BaseEntity {
+      advancedFilters {
+        title: advancedFilter(
+          type: text
+          parentKey: "metadata"
+          key: "title"
+          label: "Title"
+          isDisplayedByDefault: true
+        ) {
+          type
+          parentKey
+          key
+          label
+          isDisplayedByDefault
         }
-      }
-      ... on Manifest {
-        advancedFilters {
-          title: advancedFilter(
-            key: "title"
-            label: "Title"
+        type: advancedFilter(
+          type: selection
+          parentKey: ""
+          key: "type"
+          label: "Type"
+          isDisplayedByDefault: true
+          advancedFilterInputForRetrievingOptions: {
             type: text
-            isDisplayedByDefault: true
-          ) {
-            label
-            type
-            key
-            isDisplayedByDefault
+            parent_key: ""
+            key: "type"
+            value: "*"
+            item_types: ["manifest"]
           }
-          rights: advancedFilter(
-            key: "rights"
-            label: "Rights"
-            type: selection
-            isDisplayedByDefault: true
-            advancedFilterInputForRetrievingOptions: {
-              type: text
-              key: "rights"
-              value: "*"
-              item_types: ["manifest"]
-              provide_value_options_for_key: true
-            }
-          ) {
+        ) {
+          type
+          parentKey
+          key
+          label
+          isDisplayedByDefault
+          advancedFilterInputForRetrievingOptions {
             type
+            parent_key
             key
-            label
-            isDisplayedByDefault
-            advancedFilterInputForRetrievingOptions {
-              type
-              key
-              value
-              item_types
-            }
-          }
-          description: advancedFilter(
-            key: "description"
-            label: "Description"
-            type: text
-            isDisplayedByDefault: true
-          ) {
-            label
-            type
-            key
-            isDisplayedByDefault
-          }
-          parent: advancedFilter(
-            key: "identifiers"
-            label: "metadata.labels.parent"
-            type: selection
-          ) {
-            label
-            type
-            key
-            defaultValue(value: "*")
-            hidden(value: true)
-          }
-          type: advancedFilter(type: type) {
-            type
-            defaultValue(value: "manifest")
-            hidden(value: true)
+            value
+            item_types
           }
         }
       }
     }
+    ... on Manifest {
+      advancedFilters {
+        title: advancedFilter(
+          type: text
+          parentKey: "metadata"
+          key: "title"
+          label: "Title"
+          isDisplayedByDefault: true
+        ) {
+          type
+          parentKey
+          key
+          label
+          isDisplayedByDefault
+        }
+        rights: advancedFilter(
+          type: selection
+          parentKey: "metadata"
+          key: "rights"
+          label: "Rights"
+          isDisplayedByDefault: true
+          advancedFilterInputForRetrievingOptions: {
+            type: text
+            parent_key: "metadata"
+            key: "rights"
+            value: "*"
+            item_types: ["manifest"]
+          }
+        ) {
+          type
+          parentKey
+          key
+          label
+          isDisplayedByDefault
+          advancedFilterInputForRetrievingOptions {
+            type
+            parent_key
+            key
+            value
+            item_types
+          }
+        }
+        description: advancedFilter(
+          type: text
+          parentKey: "metadata"
+          key: "description"
+          label: "Description"
+          isDisplayedByDefault: true
+        ) {
+          type
+          parentKey
+          key
+          label
+          isDisplayedByDefault
+        }
+        type: advancedFilter(type: type) {
+          type
+          defaultValue(value: "manifest")
+          hidden(value: true)
+        }
+        institution: advancedFilter(
+          type: selection
+          parentKey: "relations"
+          key: "value"
+          label: "Institution"
+          isDisplayedByDefault: true
+          advancedFilterInputForRetrievingOptions: {
+            type: text
+            parent_key: "metadata"
+            key: "title"
+            value: "*"
+            item_types: ["institution"]
+          }
+        ) {
+          type
+          parentKey
+          key
+          label
+          isDisplayedByDefault
+          advancedFilterInputForRetrievingOptions {
+            type
+            parent_key
+            key
+            value
+            item_types
+          }
+        }
+        keyword: advancedFilter(
+          type: text
+          parentKey: "metadata"
+          key: "keyword"
+          label: "Keyword"
+          isDisplayedByDefault: true
+        ) {
+          type
+          parentKey
+          key
+          label
+          isDisplayedByDefault
+        }
+        relation: advancedFilter(
+          type: selection
+          parentKey: "relations"
+          key: "key"
+        ) {
+          type
+          parentKey
+          key
+          defaultValue(value: [])
+          hidden(value: true)
+        }
+      }
+    }
   }
+}
 
   query getUserPermissions {
     UserPermissions {
