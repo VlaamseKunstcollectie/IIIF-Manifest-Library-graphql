@@ -7,7 +7,9 @@
       "build": "tsc"
     },
     "dependencies": {
-      "graphql-modules": "^2.1.0"
+      "graphql-modules": "^2.1.0",
+      "graphql": "^16.6.0",
+      "json-merger": "^1.1.10"
     },
     "publishConfig": {
       "main": "./dist/modules/manifestLibraryModule/manifestLibraryModule.js",
