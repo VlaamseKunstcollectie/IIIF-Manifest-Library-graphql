@@ -579,15 +579,15 @@ query getAdvancedFilters($entityType: String!) {
         institution: advancedFilter(
           type: selection
           parentKey: "relations"
-          key: "value"
+          key: "isIn"
           label: "Institution"
           isDisplayedByDefault: true
           advancedFilterInputForRetrievingOptions: {
             type: text
-            parent_key: "metadata"
-            key: "title"
+            parent_key: "relations"
+            key: "isIn"
             value: "*"
-            item_types: ["institution"]
+            item_types: ["manifest"]
           }
         ) {
           type
