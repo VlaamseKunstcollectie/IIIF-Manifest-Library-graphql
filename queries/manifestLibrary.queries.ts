@@ -497,7 +497,7 @@ export const manifestLibraryQueries = gql`
               key(input: "object_number")
             }
             manifest_url: metaData {
-              label(input: "metadata.label.manifest")
+              label(input: "metadata.label.manifest-url")
               key(input: "manifest_url")
             }
           }
@@ -558,7 +558,7 @@ export const manifestLibraryQueries = gql`
               key(input: "object_number")
             }
             manifest: metaData {
-              label(input: "metadata.label.manifest")
+              label(input: "metadata.label.manifest-url")
               key(input: "manifest")
             }
           }
@@ -944,7 +944,7 @@ query getAdvancedFilters($entityType: String!) {
         key(input: "object_number")
       }
       manifest: metaData {
-        label(input: "metadata.label.manifest")
+        label(input: "metadata.label.manifest-url")
         key(input: "manifest")
       }
     }
@@ -1184,7 +1184,7 @@ query getAdvancedFilters($entityType: String!) {
               { icon: NoIcon, label: "metadata.label.title", value: "title" }
               {
                 icon: NoIcon
-                label: "metadata.label.manifest"
+                label: "metadata.label.manifest-url"
                 value: "manifest_url"
               }
             ]
