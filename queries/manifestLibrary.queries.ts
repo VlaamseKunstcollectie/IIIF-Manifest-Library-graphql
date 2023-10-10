@@ -91,21 +91,43 @@ export const manifestLibraryQueries = gql`
     ... on Manifest {
       intialValues {
         title: keyValue(key: "title", source: metadata)
-        date: keyValue(key: "date", source: metadata)
-        creator: keyValue(key: "creator", source: metadata)
-        photographer: keyValue(key: "photographer", source: metadata)
-        description: keyValue(key: "description", source: metadata)
-        rights: keyValue(key: "rights", source: metadata)
-        naamsvermelding: keyValue(key: "naamsvermelding", source: metadata)
-        object_number: keyValue(key: "object_number", source: metadata)
-        location: keyValue(key: "location", source: metadata)
-        manifest_url: keyValue(key: "manifest_url", source: metadata)
-        physical_location: keyValue(key: "physical_location", source: metadata)
+        alternative_identifier: keyValue(key: "alternative_identifier", source: metadata)
+        associated_names: keyValue(key: "associated_names", source: metadata)
+        call_number: keyValue(key: "call_number", source: metadata)
+        description_decoration: keyValue(key: "description_decoration", source: metadata)
+        digitization_date: keyValue(key: "digitization_date", source: metadata)
+        digitization_project: keyValue(key: "digitization_project", source: metadata)
+        extent: keyValue(key: "extent", source: metadata)
         language: keyValue(key: "language", source: metadata)
-        digitization_project: keyValue(
-          key: "digitization_project"
-          source: metadata
-        )
+        manifest_url: keyValue(key: "manifest_url", source: metadata)
+        manifest_version: keyValue(key: "manifest_version", source: metadata)
+        origin_place: keyValue(key: "origin_place", source: metadata)
+        physical_location: keyValue(key: "physical_location", source: metadata)
+        record: keyValue(key: "record", source: metadata)
+        rights: keyValue(key: "rights", source: metadata)
+        bibliographic_references: keyValue(key: "bibliographic_references", source: metadata)
+        date_of_creation: keyValue(key: "date_of_creation", source: metadata)
+        genre_form: keyValue(key: "genre/form", source: metadata)
+        material: keyValue(key: "material", source: metadata)
+        note: keyValue(key: "note", source: metadata)
+        provenance: keyValue(key: "provenance", source: metadata)
+        script: keyValue(key: "script", source: metadata)
+        topic_general_subdivision: keyValue(key: "topic_general_subdivision", source: metadata)
+        uniform_title: keyValue(key: "uniform_title", source: metadata)
+        catalogue_record: keyValue(key: "catalogue_record", source: metadata)
+        decoration_and_binding: keyValue(key: "decoration_and_binding", source: metadata)
+        dimensions: keyValue(key: "dimensions", source: metadata)
+        summary: keyValue(key: "summary", source: metadata)
+        attribution: keyValue(key: "attribution", source: metadata)
+        naamsvermelding: keyValue(key: "naamsvermelding", source: metadata)
+        date: keyValue(key: "date", source: metadata)
+        period: keyValue(key: "period", source: metadata)
+        type: keyValue(key: "type", source: metadata)
+        photographer: keyValue(key: "photographer", source: metadata)
+        subject: keyValue(key: "subject", source: metadata)
+        description: keyValue(key: "description", source: metadata)
+        object_id: keyValue(key: "object_id", source: metadata)
+        author: keyValue(key: "author", source: metadata)
       }
       entityView {
         column {
@@ -129,76 +151,58 @@ export const manifestLibraryQueries = gql`
                 panelType(input: metadata)
                 isEditable(input: true)
                 isCollapsed(input: false)
-                titel: metaData {
+                title: metaData {
                   label(input: "metadata.label.title")
                   key(input: "title")
                   inputField(type: baseTextField) {
                     ...inputfield
                   }
                 }
-                description: metaData {
-                  label(input: "metadata.label.description")
-                  key(input: "description")
+                alternative_identifier: metaData {
+                  label(input: "metadata.label.alternative-identifier")
+                  key(input: "alternative_identifier")
                   inputField(type: baseTextField) {
                     ...inputfield
                   }
                 }
-                rights: metaData {
-                  label(input: "metadata.label.rights")
-                  key(input: "rights")
+                associated_names: metaData {
+                  label(input: "metadata.label.associated-names")
+                  key(input: "associated_names")
                   inputField(type: baseTextField) {
                     ...inputfield
                   }
                 }
-                naamsvermelding: metaData {
-                  label(input: "metadata.label.attribution")
-                  key(input: "naamsvermelding")
+                call_number: metaData {
+                  label(input: "metadata.label.call-number")
+                  key(input: "call_number")
                   inputField(type: baseTextField) {
                     ...inputfield
                   }
                 }
-                maker: metaData {
-                  label(input: "metadata.label.creator")
-                  key(input: "creator")
+                description_decoration: metaData {
+                  label(input: "metadata.label.description-decoration")
+                  key(input: "description_decoration")
                   inputField(type: baseTextField) {
                     ...inputfield
                   }
                 }
-                datering: metaData {
-                  label(input: "metadata.label.date")
-                  key(input: "date")
-                  inputField(type: baseDateField) {
-                    ...inputfield
-                  }
-                }
-                photographer: metaData {
-                  label(input: "metadata.label.photographer")
-                  key(input: "photographer")
-                }
-                objectnummer: metaData {
-                  label(input: "metadata.label.object-number")
-                  key(input: "object_number")
+                digitization_date: metaData {
+                  label(input: "metadata.label.digitization-date")
+                  key(input: "digitization_date")
                   inputField(type: baseTextField) {
                     ...inputfield
                   }
                 }
-                location: metaData {
-                  label(input: "metadata.label.location")
-                  key(input: "location")
+                digitization_project: metaData {
+                  label(input: "metadata.label.digitization-project")
+                  key(input: "digitization_project")
                   inputField(type: baseTextField) {
                     ...inputfield
                   }
                 }
-                manifest_url: metaData {
-                  label(input: "metadata.label.manifest")
-                  key(input: "manifest_url")
-                  inputField(type: baseTextField) {
-                    ...inputfield
-                  }
-                }
-                physical_location: metaData {
-                  label(input: "metadata.label.physical-location")
-                  key(input: "physical_location")
+                extent: metaData {
+                  label(input: "metadata.label.extent")
+                  key(input: "extent")
                   inputField(type: baseTextField) {
                     ...inputfield
                   }
@@ -210,9 +214,205 @@ export const manifestLibraryQueries = gql`
                     ...inputfield
                   }
                 }
-                digitization_project: metaData {
-                  label(input: "metadata.label.digitization-project")
-                  key(input: "digitization_project")
+                manifest_url: metaData {
+                  label(input: "metadata.label.manifest-url")
+                  key(input: "manifest_url")
+                  inputField(type: baseTextField) {
+                    ...inputfield
+                  }
+                }
+                manifest_version: metaData {
+                  label(input: "metadata.label.manifest-version")
+                  key(input: "manifest_version")
+                  inputField(type: baseTextField) {
+                    ...inputfield
+                  }
+                }
+                origin_place: metaData {
+                  label(input: "metadata.label.origin-place")
+                  key(input: "origin_place")
+                  inputField(type: baseTextField) {
+                    ...inputfield
+                  }
+                }
+                physical_location: metaData {
+                  label(input: "metadata.label.physical-location")
+                  key(input: "physical_location")
+                  inputField(type: baseTextField) {
+                    ...inputfield
+                  }
+                }
+                record: metaData {
+                  label(input: "metadata.label.record")
+                  key(input: "record")
+                  inputField(type: baseTextField) {
+                    ...inputfield
+                  }
+                }
+                rights: metaData {
+                  label(input: "metadata.label.rights")
+                  key(input: "rights")
+                  inputField(type: baseTextField) {
+                    ...inputfield
+                  }
+                }
+                bibliographic_references: metaData {
+                  label(input: "metadata.label.bibliographic-references")
+                  key(input: "bibliographic_references")
+                  inputField(type: baseTextField) {
+                    ...inputfield
+                  }
+                }
+                date_of_creation: metaData {
+                  label(input: "metadata.label.date-of-creation")
+                  key(input: "date_of_creation")
+                  inputField(type: baseTextField) {
+                    ...inputfield
+                  }
+                }
+                genre_form: metaData {
+                  label(input: "metadata.label.genre-form")
+                  key(input: "genre/form")
+                  inputField(type: baseTextField) {
+                    ...inputfield
+                  }
+                }
+                material: metaData {
+                  label(input: "metadata.label.material")
+                  key(input: "material")
+                  inputField(type: baseTextField) {
+                    ...inputfield
+                  }
+                }
+                note: metaData {
+                  label(input: "metadata.label.note")
+                  key(input: "note")
+                  inputField(type: baseTextField) {
+                    ...inputfield
+                  }
+                }
+                provenance: metaData {
+                  label(input: "metadata.label.provenance")
+                  key(input: "provenance")
+                  inputField(type: baseTextField) {
+                    ...inputfield
+                  }
+                }
+                script: metaData {
+                  label(input: "metadata.label.script")
+                  key(input: "script")
+                  inputField(type: baseTextField) {
+                    ...inputfield
+                  }
+                }
+                topic_general_subdivision: metaData {
+                  label(input: "metadata.label.topic-general-subdivision")
+                  key(input: "topic_general_subdivision")
+                  inputField(type: baseTextField) {
+                    ...inputfield
+                  }
+                }
+                uniform_title: metaData {
+                  label(input: "metadata.label.uniform-title")
+                  key(input: "uniform_title")
+                  inputField(type: baseTextField) {
+                    ...inputfield
+                  }
+                }
+                catalogue_record: metaData {
+                  label(input: "metadata.label.catalogue-record")
+                  key(input: "catalogue_record")
+                  inputField(type: baseTextField) {
+                    ...inputfield
+                  }
+                }
+                decoration_and_binding: metaData {
+                  label(input: "metadata.label.decoration-and-binding")
+                  key(input: "decoration_and_binding")
+                  inputField(type: baseTextField) {
+                    ...inputfield
+                  }
+                }
+                dimensions: metaData {
+                  label(input: "metadata.label.dimensions")
+                  key(input: "dimensions")
+                  inputField(type: baseTextField) {
+                    ...inputfield
+                  }
+                }
+                summary: metaData {
+                  label(input: "metadata.label.summary")
+                  key(input: "summary")
+                  inputField(type: baseTextField) {
+                    ...inputfield
+                  }
+                }
+                attribution: metaData {
+                  label(input: "metadata.label.attribution")
+                  key(input: "attribution")
+                  inputField(type: baseTextField) {
+                    ...inputfield
+                  }
+                }
+                naamsvermelding: metaData {
+                  label(input: "metadata.label.naamsvermelding")
+                  key(input: "naamsvermelding")
+                  inputField(type: baseTextField) {
+                    ...inputfield
+                  }
+                }
+                date: metaData {
+                  label(input: "metadata.label.date")
+                  key(input: "date")
+                  inputField(type: baseTextField) {
+                    ...inputfield
+                  }
+                }
+                period: metaData {
+                  label(input: "metadata.label.period")
+                  key(input: "period")
+                  inputField(type: baseTextField) {
+                    ...inputfield
+                  }
+                }
+                type: metaData {
+                  label(input: "metadata.label.type")
+                  key(input: "type")
+                  inputField(type: baseTextField) {
+                    ...inputfield
+                  }
+                }
+                photographer: metaData {
+                  label(input: "metadata.label.photographer")
+                  key(input: "photographer")
+                  inputField(type: baseTextField) {
+                    ...inputfield
+                  }
+                }
+                subject: metaData {
+                  label(input: "metadata.label.subject")
+                  key(input: "subject")
+                  inputField(type: baseTextField) {
+                    ...inputfield
+                  }
+                }
+                description: metaData {
+                  label(input: "metadata.label.description")
+                  key(input: "description")
+                  inputField(type: baseTextField) {
+                    ...inputfield
+                  }
+                }
+                object_id: metaData {
+                  label(input: "metadata.label.object-id")
+                  key(input: "object_id")
+                  inputField(type: baseTextField) {
+                    ...inputfield
+                  }
+                }
+                author: metaData {
+                  label(input: "metadata.label.author")
+                  key(input: "author")
                   inputField(type: baseTextField) {
                     ...inputfield
                   }
