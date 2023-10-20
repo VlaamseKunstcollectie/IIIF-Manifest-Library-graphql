@@ -30,6 +30,7 @@ export const manifestLibrarySchema = gql`
     intialValues: IntialValues!
     relationValues: RelationValues
     entityView: ColumnList!
+    bulkOperationOptions: BulkOperationOptions
   }
   #
 
@@ -47,6 +48,7 @@ export const manifestLibrarySchema = gql`
     advancedFilters: AdvancedFilters
     sortOptions: SortOptions
     createFormFields: FormFields
+    bulkOperationOptions: BulkOperationOptions
   }
 
   type Manifest implements Entity {
@@ -62,6 +64,7 @@ export const manifestLibrarySchema = gql`
     advancedFilters: AdvancedFilters
     sortOptions: SortOptions
     createFormFields: FormFields
+    bulkOperationOptions: BulkOperationOptions
   }
 
   type ManifestEntity implements Entity {
@@ -78,6 +81,7 @@ export const manifestLibrarySchema = gql`
     advancedFilters: AdvancedFilters
     sortOptions: SortOptions
     createFormFields: FormFields
+    bulkOperationOptions: BulkOperationOptions
   }
 
   type Query {

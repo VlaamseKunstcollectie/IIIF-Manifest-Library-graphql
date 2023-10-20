@@ -91,12 +91,21 @@ export const manifestLibraryQueries = gql`
     ... on Manifest {
       intialValues {
         title: keyValue(key: "title", source: metadata)
-        alternative_identifier: keyValue(key: "alternative_identifier", source: metadata)
+        alternative_identifier: keyValue(
+          key: "alternative_identifier"
+          source: metadata
+        )
         associated_names: keyValue(key: "associated_names", source: metadata)
         call_number: keyValue(key: "call_number", source: metadata)
-        description_decoration: keyValue(key: "description_decoration", source: metadata)
+        description_decoration: keyValue(
+          key: "description_decoration"
+          source: metadata
+        )
         digitization_date: keyValue(key: "digitization_date", source: metadata)
-        digitization_project: keyValue(key: "digitization_project", source: metadata)
+        digitization_project: keyValue(
+          key: "digitization_project"
+          source: metadata
+        )
         extent: keyValue(key: "extent", source: metadata)
         language: keyValue(key: "language", source: metadata)
         manifest_url: keyValue(key: "manifest_url", source: metadata)
@@ -105,17 +114,26 @@ export const manifestLibraryQueries = gql`
         physical_location: keyValue(key: "physical_location", source: metadata)
         record: keyValue(key: "record", source: metadata)
         rights: keyValue(key: "rights", source: metadata)
-        bibliographic_references: keyValue(key: "bibliographic_references", source: metadata)
+        bibliographic_references: keyValue(
+          key: "bibliographic_references"
+          source: metadata
+        )
         date_of_creation: keyValue(key: "date_of_creation", source: metadata)
         genre_form: keyValue(key: "genre/form", source: metadata)
         material: keyValue(key: "material", source: metadata)
         note: keyValue(key: "note", source: metadata)
         provenance: keyValue(key: "provenance", source: metadata)
         script: keyValue(key: "script", source: metadata)
-        topic_general_subdivision: keyValue(key: "topic_general_subdivision", source: metadata)
+        topic_general_subdivision: keyValue(
+          key: "topic_general_subdivision"
+          source: metadata
+        )
         uniform_title: keyValue(key: "uniform_title", source: metadata)
         catalogue_record: keyValue(key: "catalogue_record", source: metadata)
-        decoration_and_binding: keyValue(key: "decoration_and_binding", source: metadata)
+        decoration_and_binding: keyValue(
+          key: "decoration_and_binding"
+          source: metadata
+        )
         dimensions: keyValue(key: "dimensions", source: metadata)
         summary: keyValue(key: "summary", source: metadata)
         attribution: keyValue(key: "attribution", source: metadata)
@@ -670,167 +688,167 @@ export const manifestLibraryQueries = gql`
     }
   }
 
-query getAdvancedFilters($entityType: String!) {
-  EntityTypeFilters(type: $entityType) {
-    ... on BaseEntity {
-      advancedFilters {
-        title: advancedFilter(
-          type: text
-          parentKey: "metadata"
-          key: "title"
-          label: "Title"
-          isDisplayedByDefault: true
-        ) {
-          type
-          parentKey
-          key
-          label
-          isDisplayedByDefault
-        }
-        type: advancedFilter(
-          type: selection
-          parentKey: ""
-          key: "type"
-          label: "Type"
-          isDisplayedByDefault: true
-          advancedFilterInputForRetrievingOptions: {
+  query getAdvancedFilters($entityType: String!) {
+    EntityTypeFilters(type: $entityType) {
+      ... on BaseEntity {
+        advancedFilters {
+          title: advancedFilter(
             type: text
-            parent_key: ""
-            key: "type"
-            value: "*"
-            item_types: ["manifest"]
-          }
-        ) {
-          type
-          parentKey
-          key
-          label
-          isDisplayedByDefault
-          advancedFilterInputForRetrievingOptions {
+            parentKey: "metadata"
+            key: "title"
+            label: "Title"
+            isDisplayedByDefault: true
+          ) {
             type
-            parent_key
+            parentKey
             key
-            value
-            item_types
+            label
+            isDisplayedByDefault
+          }
+          type: advancedFilter(
+            type: selection
+            parentKey: ""
+            key: "type"
+            label: "Type"
+            isDisplayedByDefault: true
+            advancedFilterInputForRetrievingOptions: {
+              type: text
+              parent_key: ""
+              key: "type"
+              value: "*"
+              item_types: ["manifest"]
+            }
+          ) {
+            type
+            parentKey
+            key
+            label
+            isDisplayedByDefault
+            advancedFilterInputForRetrievingOptions {
+              type
+              parent_key
+              key
+              value
+              item_types
+            }
           }
         }
       }
-    }
-    ... on Manifest {
-      advancedFilters {
-        title: advancedFilter(
-          type: text
-          parentKey: "metadata"
-          key: "title"
-          label: "Title"
-          isDisplayedByDefault: true
-        ) {
-          type
-          parentKey
-          key
-          label
-          isDisplayedByDefault
-        }
-        rights: advancedFilter(
-          type: selection
-          parentKey: "metadata"
-          key: "rights"
-          label: "Rights"
-          isDisplayedByDefault: true
-          advancedFilterInputForRetrievingOptions: {
+      ... on Manifest {
+        advancedFilters {
+          title: advancedFilter(
             type: text
-            parent_key: "metadata"
+            parentKey: "metadata"
+            key: "title"
+            label: "Title"
+            isDisplayedByDefault: true
+          ) {
+            type
+            parentKey
+            key
+            label
+            isDisplayedByDefault
+          }
+          rights: advancedFilter(
+            type: selection
+            parentKey: "metadata"
             key: "rights"
-            value: "*"
-            item_types: ["manifest"]
-          }
-        ) {
-          type
-          parentKey
-          key
-          label
-          isDisplayedByDefault
-          advancedFilterInputForRetrievingOptions {
+            label: "Rights"
+            isDisplayedByDefault: true
+            advancedFilterInputForRetrievingOptions: {
+              type: text
+              parent_key: "metadata"
+              key: "rights"
+              value: "*"
+              item_types: ["manifest"]
+            }
+          ) {
             type
-            parent_key
+            parentKey
             key
-            value
-            item_types
+            label
+            isDisplayedByDefault
+            advancedFilterInputForRetrievingOptions {
+              type
+              parent_key
+              key
+              value
+              item_types
+            }
           }
-        }
-        description: advancedFilter(
-          type: text
-          parentKey: "metadata"
-          key: "description"
-          label: "Description"
-          isDisplayedByDefault: true
-        ) {
-          type
-          parentKey
-          key
-          label
-          isDisplayedByDefault
-        }
-        type: advancedFilter(type: type) {
-          type
-          defaultValue(value: "manifest")
-          hidden(value: true)
-        }
-        institution: advancedFilter(
-          type: selection
-          parentKey: "relations"
-          key: "isIn"
-          label: "Institution"
-          isDisplayedByDefault: true
-          advancedFilterInputForRetrievingOptions: {
+          description: advancedFilter(
             type: text
-            parent_key: "relations"
-            key: "isIn"
-            value: "*"
-            item_types: ["manifest"]
-          }
-        ) {
-          type
-          parentKey
-          key
-          label
-          isDisplayedByDefault
-          advancedFilterInputForRetrievingOptions {
+            parentKey: "metadata"
+            key: "description"
+            label: "Description"
+            isDisplayedByDefault: true
+          ) {
             type
-            parent_key
+            parentKey
             key
-            value
-            item_types
+            label
+            isDisplayedByDefault
           }
-        }
-        keyword: advancedFilter(
-          type: text
-          parentKey: "metadata"
-          key: "keyword"
-          label: "Keyword"
-          isDisplayedByDefault: true
-        ) {
-          type
-          parentKey
-          key
-          label
-          isDisplayedByDefault
-        }
-        relation: advancedFilter(
-          type: selection
-          parentKey: "relations"
-          key: "key"
-        ) {
-          type
-          parentKey
-          key
-          defaultValue(value: [])
-          hidden(value: true)
+          type: advancedFilter(type: type) {
+            type
+            defaultValue(value: "manifest")
+            hidden(value: true)
+          }
+          institution: advancedFilter(
+            type: selection
+            parentKey: "relations"
+            key: "isIn"
+            label: "Institution"
+            isDisplayedByDefault: true
+            advancedFilterInputForRetrievingOptions: {
+              type: text
+              parent_key: "relations"
+              key: "isIn"
+              value: "*"
+              item_types: ["manifest"]
+            }
+          ) {
+            type
+            parentKey
+            key
+            label
+            isDisplayedByDefault
+            advancedFilterInputForRetrievingOptions {
+              type
+              parent_key
+              key
+              value
+              item_types
+            }
+          }
+          keyword: advancedFilter(
+            type: text
+            parentKey: "metadata"
+            key: "keyword"
+            label: "Keyword"
+            isDisplayedByDefault: true
+          ) {
+            type
+            parentKey
+            key
+            label
+            isDisplayedByDefault
+          }
+          relation: advancedFilter(
+            type: selection
+            parentKey: "relations"
+            key: "key"
+          ) {
+            type
+            parentKey
+            key
+            defaultValue(value: [])
+            hidden(value: true)
+          }
         }
       }
     }
   }
-}
 
   query getUserPermissions {
     UserPermissions {
@@ -1094,25 +1112,51 @@ query getAdvancedFilters($entityType: String!) {
     }
   }
 
-  query GetBulkOperations {
-    BulkOperations {
-      options(
-        input: [
-          {
-            icon: DocumentInfo
-            label: "bulk-operations.export-to-csv"
-            value: "exportCsv"
+  query GetBulkOperations($entityType: String!) {
+    BulkOperations(entityType: $entityType) {
+      ... on BaseEntity {
+        bulkOperationOptions {
+          options(
+            input: [
+              {
+                icon: DocumentInfo
+                label: "bulk-operations.export-to-csv"
+                value: "exportCsv"
+              }
+              {
+                icon: Focus
+                label: "bulk-operations.add-to-manifest-collection"
+                value: "addToManifestViewerCollection"
+              }
+            ]
+          ) {
+            icon
+            label
+            value
           }
-          {
-            icon: Focus
-            label: "bulk-operations.add-to-manifest-collection"
-            value: "addToManifestViewerCollection"
+        }
+      }
+      ... on Manifest {
+        bulkOperationOptions {
+          options(
+            input: [
+              {
+                icon: DocumentInfo
+                label: "bulk-operations.export-to-csv"
+                value: "exportCsv"
+              }
+              {
+                icon: Focus
+                label: "bulk-operations.add-to-manifest-collection"
+                value: "addToManifestViewerCollection"
+              }
+            ]
+          ) {
+            icon
+            label
+            value
           }
-        ]
-      ) {
-        icon
-        label
-        value
+        }
       }
     }
   }

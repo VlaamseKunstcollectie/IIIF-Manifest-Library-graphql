@@ -1,5 +1,6 @@
 import { Environment } from "base-graphql/environment";
 import { manifestLibraryRoutes } from "./manifestLibraryRoutes";
+import { Entitytyping } from "../../generated-types/type-defs";
 
 const defaultPort = 4000;
 
@@ -43,7 +44,11 @@ export const manifestLibraryAppConfig: Environment = {
       process.env.STORAGE_API_URL || "http://storage-api.dams.localhost:8100/",
   },
   features: {
-    hasSimpleSearch: false,
+    simpleSearch: {
+      hasSimpleSearch: true,
+      simpleSearchEntityTypes: [Entitytyping.Manifest],
+      simpleSearchMetadataKey: "title",
+    },
     hasTenantSelect: false,
     hasDirectoryImport: false,
   },
