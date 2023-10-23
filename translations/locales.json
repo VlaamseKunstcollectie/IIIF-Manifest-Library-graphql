@@ -5,7 +5,7 @@
             "manifests": "Manifests"
         },
         "bulk-operations": {
-            "add-to-manifest-collection": "Add to Manifest viewer collection",
+            "add-to-manifest-collection": "Compare",
             "export-to-csv": "Export to CSV"
         },
         "panel-labels": {
@@ -62,8 +62,8 @@
             "nl": "Dutch"
         },
         "manifest-viewer": {
-            "remove-from-manifest-collection": "Remove from Manifest viewer collection",
-            "add-to-manifest-collection": "Add to Manifest viewer collection",
+            "remove-from-manifest-collection": "Remove from comparison",
+            "add-to-manifest-collection": "Compare",
             "no-manifest": "Manifest could not be found"
         }
     },
@@ -73,7 +73,7 @@
             "manifests": "Manifesten"
         },
         "bulk-operations": {
-            "add-to-manifest-collection": "Toevoegen aan Manifest viewer collectie",
+            "add-to-manifest-collection": "Vergelijken",
             "export-to-csv": "Exporteer naar CSV"
         },
         "panel-labels": {
@@ -126,8 +126,8 @@
             }
         },
         "manifest-viewer": {
-            "remove-from-manifest-collection": "Verwijder uit Manifest viewer collectie",
-            "add-to-manifest-collection": "Toevoegen aan Manifest viewer collectie",
+            "remove-from-manifest-collection": "Verwijder uit vergelijking",
+            "add-to-manifest-collection": "Vergelijk",
             "no-manifest": "Manifest kon niet gevonden worden"
         }
     }
