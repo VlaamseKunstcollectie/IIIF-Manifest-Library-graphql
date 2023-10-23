@@ -51,6 +51,7 @@ export const manifestLibraryAppConfig: Environment = {
     },
     hasTenantSelect: false,
     hasDirectoryImport: false,
+    hasSEO: true,
   },
   routerConfig: manifestLibraryRoutes,
   customization: {
