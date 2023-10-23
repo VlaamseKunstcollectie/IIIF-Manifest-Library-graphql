@@ -696,7 +696,7 @@ export const manifestLibraryQueries = gql`
             type: text
             parentKey: "metadata"
             key: "title"
-            label: "Title"
+            label: "metadata.label.title"
             isDisplayedByDefault: true
           ) {
             type
@@ -709,7 +709,7 @@ export const manifestLibraryQueries = gql`
             type: selection
             parentKey: ""
             key: "type"
-            label: "Type"
+            label: "metadata.label.type"
             isDisplayedByDefault: true
             advancedFilterInputForRetrievingOptions: {
               type: text
@@ -740,7 +740,7 @@ export const manifestLibraryQueries = gql`
             type: text
             parentKey: "metadata"
             key: "title"
-            label: "Title"
+            label: "metadata.label.title"
             isDisplayedByDefault: true
           ) {
             type
@@ -753,7 +753,7 @@ export const manifestLibraryQueries = gql`
             type: selection
             parentKey: "metadata"
             key: "rights"
-            label: "Rights"
+            label: "metadata.label.rights"
             isDisplayedByDefault: true
             advancedFilterInputForRetrievingOptions: {
               type: text
@@ -779,7 +779,7 @@ export const manifestLibraryQueries = gql`
           description: advancedFilter(
             type: text
             parentKey: "metadata"
-            key: "description"
+            key: "metadata.label.description"
             label: "Description"
             isDisplayedByDefault: true
           ) {
@@ -798,7 +798,7 @@ export const manifestLibraryQueries = gql`
             type: selection
             parentKey: "relations"
             key: "isIn"
-            label: "Institution"
+            label: "metadata.label.institution"
             isDisplayedByDefault: true
             advancedFilterInputForRetrievingOptions: {
               type: text
@@ -825,7 +825,7 @@ export const manifestLibraryQueries = gql`
             type: text
             parentKey: "metadata"
             key: "keyword"
-            label: "Keyword"
+            label: "metadata.label.keyword"
             isDisplayedByDefault: true
           ) {
             type

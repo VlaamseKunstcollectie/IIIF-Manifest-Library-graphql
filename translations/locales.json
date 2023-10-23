@@ -52,7 +52,9 @@
                 "subject": "Subject",
                 "description": "Description",
                 "object-id": "Object id",
-                "author": "Author"
+                "author": "Author",
+                "institution": "Institution",
+                "keyword": "Keyword"
             }
         },
         "language":{
@@ -118,7 +120,9 @@
                 "subject": "Onderwerp",
                 "description": "Beschrijving",
                 "object-id": "Object id",
-                "author": "Auteur"
+                "author": "Auteur",
+                "institution": "Instelling",
+                "keyword": "Sleutelwoord"
             }
         },
         "manifest-viewer": {
