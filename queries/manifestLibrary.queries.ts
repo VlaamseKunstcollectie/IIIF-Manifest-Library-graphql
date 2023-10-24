@@ -505,6 +505,9 @@ export const manifestLibraryQueries = gql`
           ...minimalAsset
         }
         ... on Manifest {
+          allowedViewModes {
+            viewModes(input: [ViewModesList, ViewModesGrid])
+          }
           teaserMetadata {
             title: metaData {
               label(input: "metadata.label.title")
@@ -544,28 +547,10 @@ export const manifestLibraryQueries = gql`
             }
           }
         }
-        ... on MediaFileEntity {
-          media {
-            primaryMediafile
-            primary_transcode
-            mediafiles {
-              _id
-              filename
-              original_file_location
-              transcode_filename
-              thumbnail_file_location
-              mimetype
-              isPublic
-              metadata {
-                key
-                value
-              }
-              is_primary
-              is_primary_thumbnail
-            }
-          }
-        }
         ... on BaseEntity {
+          allowedViewModes {
+            viewModes(input: [ViewModesList, ViewModesGrid])
+          }
           teaserMetadata {
             title: metaData {
               label(input: "metadata.label.title")

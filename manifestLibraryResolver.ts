@@ -35,6 +35,10 @@ export const manifestLibraryResolver: Resolvers<ContextValue> = {
     intialValues: async (parent: any, _args, { dataSources }) => {
       return parent;
     },
+    allowedViewModes: async (parent: any, _args, { dataSources }) => {
+      return parent;
+    },
+
     entityView: async (parent: any, _args, { dataSources }) => {
       return parent;
     },
@@ -73,6 +77,9 @@ export const manifestLibraryResolver: Resolvers<ContextValue> = {
       return [Permission.Canput, Permission.Canpatch];
     },
     intialValues: async (parent: any, _args, { dataSources }) => {
+      return parent;
+    },
+    allowedViewModes: async (parent: any, _args, { dataSources }) => {
       return parent;
     },
     entityView: async (parent: any, _args, { dataSources }) => {
