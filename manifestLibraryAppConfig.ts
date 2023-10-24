@@ -51,7 +51,14 @@ export const manifestLibraryAppConfig: Environment = {
     },
     hasTenantSelect: false,
     hasDirectoryImport: false,
-    hasSEO: true,
+    SEO: {
+      hasSEO: true,
+      seoMetadataKeys: {
+        title: "title",
+        description: "description",
+        image: "thumbnail_url",
+      },
+    },
   },
   routerConfig: manifestLibraryRoutes,
   customization: {
