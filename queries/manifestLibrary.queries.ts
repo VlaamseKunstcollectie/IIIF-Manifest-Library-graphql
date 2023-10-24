@@ -527,6 +527,13 @@ export const manifestLibraryQueries = gql`
             object_number: keyValue(key: "object_number", source: metadata)
             manifest_url: keyValue(key: "manifest_url", source: metadata)
           }
+          media {
+            mediafiles {
+              _id
+              original_file_location
+              thumbnail_file_location
+            }
+          }
         }
         ... on BaseEntity {
           allowedViewModes {

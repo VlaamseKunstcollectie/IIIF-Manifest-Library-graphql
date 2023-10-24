@@ -5,6 +5,7 @@ import {
   Entity,
   Entitytyping,
   Media,
+  Metadata,
   Permission,
   Resolvers,
   WindowElement,
@@ -48,27 +49,23 @@ export const manifestLibraryResolver: Resolvers<ContextValue> = {
   },
   Manifest: {
     media: async (parent: any, _args, { dataSources }) => {
-      let thumbnail_file_location =
-        parent.data.sequences?.[0].canvases[0].images?.[0].resource?.service?.[
-          "@id"
-        ];
-      if (thumbnail_file_location)
-        thumbnail_file_location += "/full/400,/0/default.jpg";
-      else {
-        thumbnail_file_location =
-          parent.data.items?.[0].thumbnail[0].id ||
-          parent.data.sequences?.[0].canvases[0].thumbnail?.["@id"];
-      }
+      const original_file_location = parent.metadata.find(
+        (metadataItem: Metadata) => metadataItem.key === "manifest_url"
+      )?.value;
+      const thumbnail_file_location = parent.metadata.find(
+        (metadataItem: Metadata) => metadataItem.key === "thumbnail_url"
+      )?.value;
+
       const media: Media = {
         mediafiles: [
           {
-            _id: parent.data.id || parent.data["@id"],
-            original_file_location: parent.data.id || parent.data["@id"],
+            _id: original_file_location,
+            original_file_location,
             thumbnail_file_location,
-            mimetype: "json/manifest",
           },
         ],
       };
+
       return media;
     },
     permission: async (parent: any, _args, { dataSources }) => {
