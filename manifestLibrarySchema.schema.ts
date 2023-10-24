@@ -28,6 +28,7 @@ export const manifestLibrarySchema = gql`
     teaserMetadata: teaserMetadata
     permission: [Permission]
     intialValues: IntialValues!
+    allowedViewModes: AllowedViewModes
     relationValues: RelationValues
     entityView: ColumnList!
     bulkOperationOptions: BulkOperationOptions
@@ -43,6 +44,7 @@ export const manifestLibrarySchema = gql`
     title: [MetadataAndRelation]
     permission: [Permission]
     intialValues: IntialValues!
+    allowedViewModes: AllowedViewModes
     relationValues: RelationValues
     entityView: ColumnList!
     advancedFilters: AdvancedFilters
@@ -59,23 +61,7 @@ export const manifestLibrarySchema = gql`
     teaserMetadata: teaserMetadata
     permission: [Permission]
     intialValues: IntialValues!
-    relationValues: RelationValues
-    entityView: ColumnList!
-    advancedFilters: AdvancedFilters
-    sortOptions: SortOptions
-    createFormFields: FormFields
-    bulkOperationOptions: BulkOperationOptions
-  }
-
-  type ManifestEntity implements Entity {
-    id: String!
-    uuid: String!
-    type: String!
-    media: Media
-    form: Form
-    teaserMetadata: teaserMetadata
-    permission: [Permission]
-    intialValues: IntialValues!
+    allowedViewModes: AllowedViewModes
     relationValues: RelationValues
     entityView: ColumnList!
     advancedFilters: AdvancedFilters
