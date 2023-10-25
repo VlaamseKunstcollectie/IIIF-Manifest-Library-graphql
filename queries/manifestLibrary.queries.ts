@@ -235,6 +235,7 @@ export const manifestLibraryQueries = gql`
                 manifest_url: metaData {
                   label(input: "metadata.label.manifest-url")
                   key(input: "manifest_url")
+                  linkText(input: "link-texts.go-to-manifest")
                   inputField(type: baseTextField) {
                     ...inputfield
                   }
@@ -520,6 +521,7 @@ export const manifestLibraryQueries = gql`
             manifest_url: metaData {
               label(input: "metadata.label.manifest-url")
               key(input: "manifest_url")
+              linkText(input: "link-texts.go-to-manifest")
             }
           }
           intialValues {
@@ -752,8 +754,8 @@ export const manifestLibraryQueries = gql`
           description: advancedFilter(
             type: text
             parentKey: "metadata"
-            key: "metadata.label.description"
-            label: "Description"
+            key: "description"
+            label: "metadata.label.description"
             isDisplayedByDefault: true
           ) {
             type

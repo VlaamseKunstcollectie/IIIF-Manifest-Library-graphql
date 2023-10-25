@@ -65,6 +65,9 @@
             "remove-from-manifest-collection": "Remove from comparison",
             "add-to-manifest-collection": "Compare",
             "no-manifest": "Manifest could not be found"
+        },
+        "link-texts": {
+            "go-to-manifest": "Click here to go to manifest"
         }
     },
     "nl": {
@@ -129,6 +132,9 @@
             "remove-from-manifest-collection": "Verwijder uit vergelijking",
             "add-to-manifest-collection": "Vergelijk",
             "no-manifest": "Manifest kon niet gevonden worden"
+        },
+        "link-texts": {
+            "go-to-manifest": "Klik hier om naar het manifest te gaan"
         }
     }
 }
