@@ -5,7 +5,7 @@
             "manifests": "Manifests"
         },
         "bulk-operations": {
-            "add-to-manifest-collection": "Compare",
+            "add-to-manifest-collection": "Open in comparison view",
             "export-to-csv": "Export to CSV"
         },
         "panel-labels": {
@@ -63,7 +63,7 @@
         },
         "manifest-viewer": {
             "remove-from-manifest-collection": "Remove from comparison",
-            "add-to-manifest-collection": "Compare",
+            "add-to-manifest-collection": "Add to comparison",
             "no-manifest": "Manifest could not be found"
         },
         "link-texts": {
@@ -76,7 +76,7 @@
             "manifests": "Manifesten"
         },
         "bulk-operations": {
-            "add-to-manifest-collection": "Vergelijken",
+            "add-to-manifest-collection": "Openen in vergelijkingsweergave",
             "export-to-csv": "Exporteer naar CSV"
         },
         "panel-labels": {
@@ -130,7 +130,7 @@
         },
         "manifest-viewer": {
             "remove-from-manifest-collection": "Verwijder uit vergelijking",
-            "add-to-manifest-collection": "Vergelijk",
+            "add-to-manifest-collection": "Toevoegen aan vergelijking",
             "no-manifest": "Manifest kon niet gevonden worden"
         },
         "link-texts": {
