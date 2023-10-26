@@ -6,6 +6,7 @@ export const manifestLibrarySchema = gql`
     SingleEntity
     History
     ManifestViewer
+    Manifests
   }
 
   enum Entitytyping {

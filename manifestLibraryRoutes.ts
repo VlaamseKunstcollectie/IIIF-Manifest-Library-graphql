@@ -21,7 +21,18 @@ export const manifestLibraryRoutes = [
         name: RouteNames.SingleEntity,
         component: "SingleEntity",
         meta: {
-          title: "Single Asset",
+          title: "Single Entity",
+          requiresAuth: false,
+          showEntityTitle: true,
+          type: Collection.Entities,
+        },
+      },
+      {
+        path: "manifests",
+        name: RouteNames.Manifests,
+        component: "Home",
+        meta: {
+          title: "navigation.manifests",
           requiresAuth: false,
           showEntityTitle: true,
           type: Collection.Entities,
