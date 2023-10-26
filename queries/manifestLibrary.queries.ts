@@ -1044,10 +1044,10 @@ export const manifestLibraryQueries = gql`
           }
         }
         mirador: menuItem(
-          label: "navigation.mirador"
+          label: "navigation.manifest-viewer"
           icon: Focus
           isLoggedIn: false
-          typeLink: { route: { destination: "mirador" } }
+          typeLink: { route: { destination: "manifest" } }
         ) {
           label
           icon

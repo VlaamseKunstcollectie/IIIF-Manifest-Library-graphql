@@ -26,10 +26,10 @@ export const manifestLibraryRoutes = [
     ],
   },
   {
-    path: "/mirador",
-    name: RouteNames.Mirador,
-    component: "Mirador",
-    meta: { title: "navigation.mirador", requiresAuth: false },
+    path: "/manifest",
+    name: RouteNames.Manifest,
+    component: "Manifest",
+    meta: { title: "navigation.manifest-viewer", requiresAuth: false },
   },
   { path: "/home", redirect: "/" },
 ];

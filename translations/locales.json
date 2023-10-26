@@ -1,7 +1,7 @@
 {
     "en": {
         "navigation": {
-            "mirador": "Mirador viewer",
+            "manifest-viewer": "Manifest viewer",
             "manifests": "Manifests"
         },
         "bulk-operations": {
@@ -72,7 +72,7 @@
     },
     "nl": {
         "navigation": {
-            "mirador": "Mirador viewer",
+            "manifest-viewer": "Manifest viewer",
             "manifests": "Manifesten"
         },
         "bulk-operations": {
