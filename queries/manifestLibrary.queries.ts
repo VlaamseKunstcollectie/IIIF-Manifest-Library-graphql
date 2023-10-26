@@ -459,22 +459,22 @@ export const manifestLibraryQueries = gql`
         }
       }
     }
-    ... on MediaFileEntity {
-      media {
-        mediafiles {
-          _id
-          filename
-          original_file_location
-          transcode_filename
-          thumbnail_file_location
-          mimetype
-          isPublic
-          metadata {
-            key
-            value
+    ... on DocumentationEntity {
+      intialValues {
+        id: keyValue(key: "id", source: metadata)
+        title: keyValue(key: "title", source: metadata)
+        content: keyValue(key: "content", source: metadata)
+      }
+      entityView {
+        column {
+          size(size: ninety)
+          elements {
+            markdownView: markdownViewerElement {
+              label(input: "panel-labels.documentation")
+              isCollapsed(input: false)
+              markdownContent(metadataKey: "content")
+            }
           }
-          is_primary
-          is_primary_thumbnail
         }
       }
     }
@@ -1058,18 +1058,22 @@ export const manifestLibraryQueries = gql`
             }
           }
         }
-        nieuw: menuItem(
-          label: "navigation.new"
-          icon: Create
-          isLoggedIn: true
-          typeLink: { modal: { typeModal: Create } }
+        Documentation: menuItem(
+          label: "navigation.documentation"
+          icon: InfoCircle
+          isLoggedIn: false
+          typeLink: {
+            route: {
+              destination: "entity/bc9fc75d-8bfc-498c-b88d-946d9bac8616"
+            }
+          }
         ) {
           label
           icon
           isLoggedIn
           typeLink {
-            modal {
-              typeModal
+            route {
+              destination
             }
           }
         }

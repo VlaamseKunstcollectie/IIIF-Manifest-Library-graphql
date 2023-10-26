@@ -47,5 +47,12 @@ export const manifestLibraryRoutes = [
     component: "Manifest",
     meta: { title: "navigation.manifest-viewer", requiresAuth: false },
   },
+  {
+    path: "/:pathMatch(.*)*",
+    name: RouteNames.NotFound,
+    component: "NotFound",
+    meta: { title: "Not Found", requiresAuth: false },
+  },
+
   { path: "/home", redirect: "/" },
 ];

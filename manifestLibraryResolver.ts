@@ -20,6 +20,8 @@ export const manifestLibraryResolver: Resolvers<ContextValue> = {
         return "MediaFileEntity";
       } else if (obj.type == Entitytyping.Manifest) {
         return "Manifest";
+      } else if (obj.type == Entitytyping.DocumentationEntity) {
+        return "DocumentationEntity";
       }
       return "BaseEntity";
     },
@@ -79,6 +81,29 @@ export const manifestLibraryResolver: Resolvers<ContextValue> = {
     allowedViewModes: async (parent: any, _args, { dataSources }) => {
       return parent;
     },
+    entityView: async (parent: any, _args, { dataSources }) => {
+      return parent;
+    },
+    teaserMetadata: async (parent: any, _args, { dataSources }) => {
+      return parent;
+    },
+  },
+  DocumentationEntity: {
+    media: async (parent: any, _args, { dataSources }) => {
+      return resolveMedia(dataSources, parent);
+    },
+    permission: async (parent: any, _args, { dataSources }) => {
+      // Todo fix permissions
+      // return resolvePermission(dataSources, parent.id);
+      return [Permission.Canput, Permission.Canpatch];
+    },
+    intialValues: async (parent: any, _args, { dataSources }) => {
+      return parent;
+    },
+    allowedViewModes: async (parent: any, _args, { dataSources }) => {
+      return parent;
+    },
+
     entityView: async (parent: any, _args, { dataSources }) => {
       return parent;
     },

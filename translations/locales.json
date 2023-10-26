@@ -2,7 +2,8 @@
     "en": {
         "navigation": {
             "manifest-viewer": "Manifest viewer",
-            "manifests": "Manifests"
+            "manifests": "Manifests",
+            "documentation": "Documentation"
         },
         "bulk-operations": {
             "add-to-manifest-collection": "Open in comparison view",
@@ -10,7 +11,8 @@
         },
         "panel-labels": {
             "description": "Description",
-            "manifest-view": "Manifest viewer"
+            "manifest-view": "Manifest viewer",
+            "documentation": "Documentation"
         },
         "window-element-labels": {},
         "metadata": {
@@ -73,7 +75,8 @@
     "nl": {
         "navigation": {
             "manifest-viewer": "Manifest viewer",
-            "manifests": "Manifesten"
+            "manifests": "Manifesten",
+            "documentation": "Documentatie"
         },
         "bulk-operations": {
             "add-to-manifest-collection": "Openen in vergelijkingsweergave",
@@ -81,7 +84,8 @@
         },
         "panel-labels": {
             "description": "Beschrijving",
-            "manifest-view": "Manifest viewer"
+            "manifest-view": "Manifest viewer",
+            "documentation": "Documentatie"
         },
         "window-element-labels": {},
         "metadata": {

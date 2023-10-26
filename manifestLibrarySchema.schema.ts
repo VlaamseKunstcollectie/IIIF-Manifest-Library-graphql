@@ -2,19 +2,14 @@ import { gql } from "graphql-modules";
 
 export const manifestLibrarySchema = gql`
   enum RouteNames {
-    Home
-    SingleEntity
     History
     ManifestViewer
     Manifests
   }
 
   enum Entitytyping {
-    asset
-    boek
-    tijdschrift
-    mediafile
     manifest
+    documentationEntity
   }
 
   enum CreateableEntityTypes {
@@ -55,6 +50,23 @@ export const manifestLibrarySchema = gql`
   }
 
   type Manifest implements Entity {
+    id: String!
+    uuid: String!
+    type: String!
+    media: Media
+    teaserMetadata: teaserMetadata
+    permission: [Permission]
+    intialValues: IntialValues!
+    allowedViewModes: AllowedViewModes
+    relationValues: RelationValues
+    entityView: ColumnList!
+    advancedFilters: AdvancedFilters
+    sortOptions: SortOptions
+    createFormFields: FormFields
+    bulkOperationOptions: BulkOperationOptions
+  }
+
+  type DocumentationEntity implements Entity {
     id: String!
     uuid: String!
     type: String!
