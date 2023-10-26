@@ -10,7 +10,7 @@ export const manifestLibraryRoutes = [
     name: RouteNames.Home,
     component: "HomeWrapper",
     meta: {
-      title: "Home",
+      title: "navigation.manifests",
       type: Collection.Entities,
       requiresAuth: false,
       entityType: Entitytyping.Manifest,
