@@ -1,4 +1,8 @@
-import { Collection, RouteNames } from "../../generated-types/type-defs";
+import {
+  Collection,
+  Entitytyping,
+  RouteNames,
+} from "../../generated-types/type-defs";
 
 export const manifestLibraryRoutes = [
   {
@@ -9,7 +13,7 @@ export const manifestLibraryRoutes = [
       title: "Home",
       type: Collection.Entities,
       requiresAuth: false,
-      entityType: "manifest",
+      entityType: Entitytyping.Manifest,
     },
     children: [
       {
@@ -21,13 +25,14 @@ export const manifestLibraryRoutes = [
           requiresAuth: false,
           showEntityTitle: true,
           type: Collection.Entities,
+          entityType: Entitytyping.Manifest,
         },
       },
     ],
   },
   {
-    path: "/manifest",
-    name: RouteNames.Manifest,
+    path: "/manifestViewer",
+    name: RouteNames.ManifestViewer,
     component: "Manifest",
     meta: { title: "navigation.manifest-viewer", requiresAuth: false },
   },

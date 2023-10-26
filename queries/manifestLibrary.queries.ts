@@ -1032,7 +1032,7 @@ export const manifestLibraryQueries = gql`
             name
             manifests: menuItem(
               label: "navigation.manifests"
-              typeLink: { route: { destination: "home" } }
+              typeLink: { route: { destination: "manifests" } }
             ) {
               label
               typeLink {
@@ -1043,11 +1043,11 @@ export const manifestLibraryQueries = gql`
             }
           }
         }
-        mirador: menuItem(
+        manifestViewer: menuItem(
           label: "navigation.manifest-viewer"
           icon: Focus
           isLoggedIn: false
-          typeLink: { route: { destination: "manifest" } }
+          typeLink: { route: { destination: "manifestViewer" } }
         ) {
           label
           icon
