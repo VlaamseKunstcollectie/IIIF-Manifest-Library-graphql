@@ -1239,4 +1239,8 @@ export const manifestLibraryQueries = gql`
       }
     }
   }
+
+  query getGraphData($id: String!, $graph: GraphElementInput!) {
+    GraphData(id: $id, graph: $graph)
+  }
 `;
