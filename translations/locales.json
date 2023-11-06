@@ -59,10 +59,6 @@
                 "keyword": "Keyword"
             }
         },
-        "language":{
-            "en": "English",
-            "nl": "Dutch"
-        },
         "manifest-viewer": {
             "remove-from-manifest-collection": "Remove from comparison",
             "add-to-manifest-collection": "Add to comparison",
