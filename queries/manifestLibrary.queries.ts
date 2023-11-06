@@ -51,22 +51,6 @@ export const manifestLibraryQueries = gql`
     }
   }
 
-  fragment minimalLinkedAsset on Asset {
-    ...minimalBaseEntity
-    media {
-      primary_transcode
-    }
-    intialValues {
-      title: keyValue(key: "title", source: metadata)
-    }
-    teaserMetadata {
-      title: metaData {
-        label(input: "metadata.labels.title")
-        key(input: "title")
-      }
-    }
-  }
-
   fragment minimalTenant on Tenant {
     ...minimalBaseEntity
     media {
@@ -780,6 +764,7 @@ export const manifestLibraryQueries = gql`
               parent_key: "relations"
               key: "isIn"
               value: "*"
+              metadata_key_as_label: "title"
               item_types: ["manifest"]
             }
           ) {
@@ -793,6 +778,7 @@ export const manifestLibraryQueries = gql`
               parent_key
               key
               value
+              metadata_key_as_label
               item_types
             }
           }
@@ -874,20 +860,6 @@ export const manifestLibraryQueries = gql`
       _id
       filename
     }
-  }
-
-  mutation getAssetsRelationedWithMediafFile($mediaFileId: String!) {
-    getAssetsRelationedWithMediafFile(mediaFileId: $mediaFileId) {
-      ...minimalLinkedAsset
-    }
-  }
-
-  mutation deleteData(
-    $id: String!
-    $path: Collection!
-    $deleteMediafiles: Boolean!
-  ) {
-    deleteData(id: $id, path: $path, deleteMediafiles: $deleteMediafiles)
   }
 
   mutation createEntity($data: EntityInput!) {
