@@ -51,6 +51,40 @@ export const manifestLibraryQueries = gql`
     }
   }
 
+  fragment minimalManifest on Manifest {
+    ...minimalBaseEntity
+    allowedViewModes {
+      viewModes(input: [ViewModesList, ViewModesGrid])
+    }
+    teaserMetadata {
+      title: metaData {
+        label(input: "metadata.label.title")
+        key(input: "title")
+      }
+      object_number: metaData {
+        label(input: "metadata.label.object-number")
+        key(input: "object_number")
+      }
+      manifest_url: metaData {
+        label(input: "metadata.label.manifest-url")
+        key(input: "manifest_url")
+        linkText(input: "link-texts.go-to-manifest")
+      }
+    }
+    intialValues {
+      title: keyValue(key: "title", source: metadata)
+      object_number: keyValue(key: "object_number", source: metadata)
+      manifest_url: keyValue(key: "manifest_url", source: metadata)
+    }
+    media {
+      mediafiles {
+        _id
+        original_file_location
+        thumbnail_file_location
+      }
+    }
+  }
+
   fragment minimalTenant on Tenant {
     ...minimalBaseEntity
     media {
@@ -490,36 +524,7 @@ export const manifestLibraryQueries = gql`
           ...minimalAsset
         }
         ... on Manifest {
-          allowedViewModes {
-            viewModes(input: [ViewModesList, ViewModesGrid])
-          }
-          teaserMetadata {
-            title: metaData {
-              label(input: "metadata.label.title")
-              key(input: "title")
-            }
-            object_number: metaData {
-              label(input: "metadata.label.object-number")
-              key(input: "object_number")
-            }
-            manifest_url: metaData {
-              label(input: "metadata.label.manifest-url")
-              key(input: "manifest_url")
-              linkText(input: "link-texts.go-to-manifest")
-            }
-          }
-          intialValues {
-            title: keyValue(key: "title", source: metadata)
-            object_number: keyValue(key: "object_number", source: metadata)
-            manifest_url: keyValue(key: "manifest_url", source: metadata)
-          }
-          media {
-            mediafiles {
-              _id
-              original_file_location
-              thumbnail_file_location
-            }
-          }
+          ...minimalManifest
         }
         ... on BaseEntity {
           allowedViewModes {
