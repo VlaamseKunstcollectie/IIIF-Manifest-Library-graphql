@@ -862,6 +862,14 @@ export const manifestLibraryQueries = gql`
     }
   }
 
+  mutation deleteData(
+    $id: String!
+    $path: Collection!
+    $deleteMediafiles: Boolean!
+  ) {
+    deleteData(id: $id, path: $path, deleteMediafiles: $deleteMediafiles)
+  }
+
   mutation createEntity($data: EntityInput!) {
     createEntity(entity: $data) {
       ...fullEntity
