@@ -1010,9 +1010,11 @@ export const manifestLibraryQueries = gql`
             name
             manifests: menuItem(
               label: "navigation.manifests"
+              entityType: manifest
               typeLink: { route: { destination: "manifests" } }
             ) {
               label
+              entityType
               typeLink {
                 route {
                   destination
@@ -1038,6 +1040,7 @@ export const manifestLibraryQueries = gql`
         }
         Documentation: menuItem(
           label: "navigation.documentation"
+          entityType: documentationEntity
           icon: InfoCircle
           isLoggedIn: false
           typeLink: {
@@ -1047,6 +1050,7 @@ export const manifestLibraryQueries = gql`
           }
         ) {
           label
+          entityType
           icon
           isLoggedIn
           typeLink {
