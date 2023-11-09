@@ -72,6 +72,7 @@ export const manifestLibraryQueries = gql`
         label(input: "metadata.label.manifest-url")
         key(input: "manifest_url")
         linkText(input: "link-texts.go-to-manifest")
+        linkIcon(input: Iiif)
       }
     }
     intialValues {

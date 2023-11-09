@@ -65,7 +65,7 @@
             "no-manifest": "Manifest could not be found"
         },
         "link-texts": {
-            "go-to-manifest": "Click here to go to manifest"
+            "go-to-manifest": "Go to manifest"
         }
     },
     "nl": {
@@ -134,7 +134,7 @@
             "no-manifest": "Manifest kon niet gevonden worden"
         },
         "link-texts": {
-            "go-to-manifest": "Klik hier om naar het manifest te gaan"
+            "go-to-manifest": "Ga naar het manifest"
         }
     }
 }
