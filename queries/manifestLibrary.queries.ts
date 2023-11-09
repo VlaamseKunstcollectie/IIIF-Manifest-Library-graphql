@@ -57,6 +57,9 @@ export const manifestLibraryQueries = gql`
       viewModes(input: [ViewModesList, ViewModesGrid])
     }
     teaserMetadata {
+      thumbnail_url: thumbnail {
+        key(input: "thumbnail_url")
+      }
       title: metaData {
         label(input: "metadata.label.title")
         key(input: "title")
@@ -65,7 +68,7 @@ export const manifestLibraryQueries = gql`
         label(input: "metadata.label.object-number")
         key(input: "object_number")
       }
-      manifest_url: metaData {
+      manifest_url: link {
         label(input: "metadata.label.manifest-url")
         key(input: "manifest_url")
         linkText(input: "link-texts.go-to-manifest")
@@ -75,13 +78,7 @@ export const manifestLibraryQueries = gql`
       title: keyValue(key: "title", source: metadata)
       object_number: keyValue(key: "object_number", source: metadata)
       manifest_url: keyValue(key: "manifest_url", source: metadata)
-    }
-    media {
-      mediafiles {
-        _id
-        original_file_location
-        thumbnail_file_location
-      }
+      thumbnail_url: keyValue(key: "thumbnail_url", source: metadata)
     }
   }
 
@@ -1231,5 +1228,16 @@ export const manifestLibraryQueries = gql`
 
   query getGraphData($id: String!, $graph: GraphElementInput!) {
     GraphData(id: $id, graph: $graph)
+  }
+
+  query GetPermissionMappingPerEntity($type: String!) {
+    PermissionMappingPerEntity(type: $type)
+  }
+
+  query GetPermissionMappingEntities {
+    PermissionMappingEntities {
+      permission
+      hasPermission
+    }
   }
 `;
