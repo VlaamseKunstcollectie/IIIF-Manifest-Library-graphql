@@ -75,6 +75,6 @@ export const manifestLibraryAppConfig: Environment = {
   sentryDsn: process.env.SENTRY_DSN || "",
   sentryDsnFrontend: process.env.SENTRY_DSN_FRONTEND || "",
   nomadNamespace: process.env.NOMAD_NAMESPACE || "",
-  ignorePermissions: process.env.IGNORE_PERMISSIONS === "true",
+  ignorePermissions: true,
   maxUploadSize: Number(process.env.MAX_UPLOAD_SIZE) || 250 * 1024000,
 };

@@ -33,7 +33,7 @@ export const manifestLibraryResolver: Resolvers<ContextValue> = {
     permission: async (parent: any, _args, { dataSources }) => {
       // Todo fix permissions
       // return resolvePermission(dataSources, parent.id);
-      return [Permission.Canput, Permission.Canpatch];
+      return [Permission.Canupdate];
     },
     intialValues: async (parent: any, _args, { dataSources }) => {
       return parent;
@@ -73,7 +73,7 @@ export const manifestLibraryResolver: Resolvers<ContextValue> = {
     permission: async (parent: any, _args, { dataSources }) => {
       // Todo fix permissions
       // return resolvePermission(dataSources, parent.id);
-      return [Permission.Canput, Permission.Canpatch];
+      return [Permission.Canupdate];
     },
     intialValues: async (parent: any, _args, { dataSources }) => {
       return parent;
@@ -95,7 +95,7 @@ export const manifestLibraryResolver: Resolvers<ContextValue> = {
     permission: async (parent: any, _args, { dataSources }) => {
       // Todo fix permissions
       // return resolvePermission(dataSources, parent.id);
-      return [Permission.Canput, Permission.Canpatch];
+      return [Permission.Canupdate];
     },
     intialValues: async (parent: any, _args, { dataSources }) => {
       return parent;
