@@ -1226,12 +1226,16 @@ export const manifestLibraryQueries = gql`
     GraphData(id: $id, graph: $graph)
   }
 
-  query GetPermissionMappingPerEntity($type: String!) {
-    PermissionMappingPerEntity(type: $type)
+  query GetPermissionMappingPerEntityType($type: String!) {
+    PermissionMappingPerEntityType(type: $type)
   }
 
-  query GetPermissionMappingEntities {
-    PermissionMappingEntities {
+  query GetPermissionMappingCreate {
+    PermissionMappingCreate
+  }
+
+  query GetPermissionMappingEntityDetail($id: String!) {
+    PermissionMappingEntityDetail(id: $id) {
       permission
       hasPermission
     }
