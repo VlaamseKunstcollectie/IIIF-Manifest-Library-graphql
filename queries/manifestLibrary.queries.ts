@@ -64,10 +64,6 @@ export const manifestLibraryQueries = gql`
         label(input: "metadata.label.title")
         key(input: "title")
       }
-      object_number: metaData {
-        label(input: "metadata.label.object-number")
-        key(input: "object_number")
-      }
       manifest_url: link {
         label(input: "metadata.label.manifest-url")
         key(input: "manifest_url")
@@ -77,7 +73,6 @@ export const manifestLibraryQueries = gql`
     }
     intialValues {
       title: keyValue(key: "title", source: metadata)
-      object_number: keyValue(key: "object_number", source: metadata)
       manifest_url: keyValue(key: "manifest_url", source: metadata)
       thumbnail_url: keyValue(key: "thumbnail_url", source: metadata)
     }
