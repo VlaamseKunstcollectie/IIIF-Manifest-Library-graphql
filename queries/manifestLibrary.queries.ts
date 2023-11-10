@@ -993,6 +993,7 @@ export const manifestLibraryQueries = gql`
           icon: BookOpen
           isLoggedIn: false
           typeLink: { route: { destination: "Home" } }
+          requiresAuth: false
         ) {
           label
           icon
@@ -1002,12 +1003,14 @@ export const manifestLibraryQueries = gql`
               destination
             }
           }
+          requiresAuth
           subMenu(name: "sub-menu-entities") {
             name
             manifests: menuItem(
               label: "navigation.manifests"
               entityType: manifest
               typeLink: { route: { destination: "manifests" } }
+              requiresAuth: false
             ) {
               label
               entityType
@@ -1016,6 +1019,7 @@ export const manifestLibraryQueries = gql`
                   destination
                 }
               }
+              requiresAuth
             }
           }
         }
@@ -1024,6 +1028,7 @@ export const manifestLibraryQueries = gql`
           icon: Focus
           isLoggedIn: false
           typeLink: { route: { destination: "manifestViewer" } }
+          requiresAuth: false
         ) {
           label
           icon
@@ -1033,6 +1038,7 @@ export const manifestLibraryQueries = gql`
               destination
             }
           }
+          requiresAuth
         }
         Documentation: menuItem(
           label: "navigation.documentation"
@@ -1044,6 +1050,7 @@ export const manifestLibraryQueries = gql`
               destination: "entity/bc9fc75d-8bfc-498c-b88d-946d9bac8616"
             }
           }
+          requiresAuth: false
         ) {
           label
           entityType
@@ -1054,6 +1061,7 @@ export const manifestLibraryQueries = gql`
               destination
             }
           }
+          requiresAuth
         }
       }
     }
