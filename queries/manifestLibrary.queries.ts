@@ -967,10 +967,6 @@ export const manifestLibraryQueries = gql`
 
   query GetCreateEntityForm($type: Entitytyping!) {
     CreateEntityForm(type: $type) {
-      idSyntax {
-        prefix
-        field
-      }
       formFields {
         ... on Manifest {
           createFormFields {
