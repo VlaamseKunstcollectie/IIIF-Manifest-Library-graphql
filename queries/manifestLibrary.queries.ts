@@ -147,8 +147,7 @@ export const manifestLibraryQueries = gql`
         )
         dimensions: keyValue(key: "dimensions", source: metadata)
         summary: keyValue(key: "summary", source: metadata)
-        attribution: keyValue(key: "attribution", source: metadata)
-        naamsvermelding: keyValue(key: "naamsvermelding", source: metadata)
+        requiredstatement: keyValue(key: "requiredstatement", source: metadata)
         date: keyValue(key: "date", source: metadata)
         period: keyValue(key: "period", source: metadata)
         type: keyValue(key: "type", source: metadata)
@@ -377,16 +376,9 @@ export const manifestLibraryQueries = gql`
                     ...inputfield
                   }
                 }
-                attribution: metaData {
-                  label(input: "metadata.label.attribution")
-                  key(input: "attribution")
-                  inputField(type: baseTextField) {
-                    ...inputfield
-                  }
-                }
-                naamsvermelding: metaData {
-                  label(input: "metadata.label.naamsvermelding")
-                  key(input: "naamsvermelding")
+                requiredstatement: metaData {
+                  label(input: "metadata.label.requiredstatement")
+                  key(input: "requiredstatement")
                   inputField(type: baseTextField) {
                     ...inputfield
                   }
