@@ -815,8 +815,8 @@ export const manifestLibraryQueries = gql`
     }
   }
 
-  mutation mutateEntityValues($id: String!, $formInput: EntityFormInput!) {
-    mutateEntityValues(id: $id, formInput: $formInput) {
+  mutation mutateEntityValues($id: String!, $formInput: EntityFormInput!, $collection: Collection!) {
+    mutateEntityValues(id: $id, formInput: $formInput, collection: $collection) {
       ...fullEntity
     }
   }
