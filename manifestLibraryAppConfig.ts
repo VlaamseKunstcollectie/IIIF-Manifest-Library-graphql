@@ -42,6 +42,8 @@ export const manifestLibraryAppConfig: Environment = {
       process.env.IMAGE_API_URL_EXT || "http://localhost:8182/iiif/image",
     storageApiUrl:
       process.env.STORAGE_API_URL || "http://storage-api.dams.localhost:8100/",
+    storageApiUrlExt:
+        process.env.STORAGE_API_URL_EXT || "http://storage-api.dams.localhost:8100/",
   },
   features: {
     simpleSearch: {
