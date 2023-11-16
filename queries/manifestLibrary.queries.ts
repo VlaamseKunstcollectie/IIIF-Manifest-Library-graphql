@@ -653,6 +653,7 @@ export const manifestLibraryQueries = gql`
             key
             label
             isDisplayedByDefault
+            tooltip(value: true)
           }
           type: advancedFilter(
             type: selection
@@ -680,6 +681,7 @@ export const manifestLibraryQueries = gql`
               value
               item_types
             }
+            tooltip(value: true)
           }
         }
       }
@@ -697,6 +699,7 @@ export const manifestLibraryQueries = gql`
             key
             label
             isDisplayedByDefault
+            tooltip(value: true)
           }
           rights: advancedFilter(
             type: selection
@@ -724,6 +727,7 @@ export const manifestLibraryQueries = gql`
               value
               item_types
             }
+            tooltip(value: true)
           }
           description: advancedFilter(
             type: text
@@ -737,9 +741,11 @@ export const manifestLibraryQueries = gql`
             key
             label
             isDisplayedByDefault
+            tooltip(value: true)
           }
           type: advancedFilter(type: type) {
             type
+            tooltip(value: true)
             defaultValue(value: "manifest")
             hidden(value: true)
           }
@@ -771,6 +777,7 @@ export const manifestLibraryQueries = gql`
               metadata_key_as_label
               item_types
             }
+            tooltip(value: true)
           }
           keyword: advancedFilter(
             type: text
@@ -784,6 +791,7 @@ export const manifestLibraryQueries = gql`
             key
             label
             isDisplayedByDefault
+            tooltip(value: true)
           }
           relation: advancedFilter(
             type: selection
@@ -793,6 +801,7 @@ export const manifestLibraryQueries = gql`
             type
             parentKey
             key
+            tooltip(value: true)
             defaultValue(value: [])
             hidden(value: true)
           }
