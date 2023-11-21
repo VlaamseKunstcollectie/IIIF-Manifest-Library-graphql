@@ -816,8 +816,16 @@ export const manifestLibraryQueries = gql`
     }
   }
 
-  mutation mutateEntityValues($id: String!, $formInput: EntityFormInput!, $collection: Collection!) {
-    mutateEntityValues(id: $id, formInput: $formInput, collection: $collection) {
+  mutation mutateEntityValues(
+    $id: String!
+    $formInput: EntityFormInput!
+    $collection: Collection!
+  ) {
+    mutateEntityValues(
+      id: $id
+      formInput: $formInput
+      collection: $collection
+    ) {
       ...fullEntity
     }
   }
@@ -989,11 +997,11 @@ export const manifestLibraryQueries = gql`
     Menu(name: $name) {
       menu {
         name
-        entities: menuItem(
-          label: "navigation.entities"
+        collection: menuItem(
+          label: "navigation.collection"
           icon: BookOpen
           isLoggedIn: false
-          typeLink: { route: { destination: "Home" } }
+          typeLink: { route: { destination: "manifests" } }
           requiresAuth: false
         ) {
           label
@@ -1005,27 +1013,9 @@ export const manifestLibraryQueries = gql`
             }
           }
           requiresAuth
-          subMenu(name: "sub-menu-entities") {
-            name
-            manifests: menuItem(
-              label: "navigation.manifests"
-              entityType: manifest
-              typeLink: { route: { destination: "manifests" } }
-              requiresAuth: false
-            ) {
-              label
-              entityType
-              typeLink {
-                route {
-                  destination
-                }
-              }
-              requiresAuth
-            }
-          }
         }
         manifestViewer: menuItem(
-          label: "navigation.manifest-viewer"
+          label: "navigation.compare"
           icon: Focus
           isLoggedIn: false
           typeLink: { route: { destination: "manifestViewer" } }

@@ -1,8 +1,8 @@
 {
     "en": {
         "navigation": {
-            "manifest-viewer": "Manifest viewer",
-            "manifests": "Manifests",
+            "compare": "Compare works",
+            "collection": "Collection",
             "documentation": "Documentation"
         },
         "bulk-operations": {
@@ -69,8 +69,8 @@
     },
     "nl": {
         "navigation": {
-            "manifest-viewer": "Manifest viewer",
-            "manifests": "Manifesten",
+            "compare": "Werken vergelijken",
+            "collection": "Collectie",
             "documentation": "Documentatie"
         },
         "bulk-operations": {

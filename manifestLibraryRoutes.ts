@@ -45,7 +45,7 @@ export const manifestLibraryRoutes = [
     path: "/manifestViewer",
     name: RouteNames.ManifestViewer,
     component: "Manifest",
-    meta: { title: "navigation.manifest-viewer", requiresAuth: false },
+    meta: { title: "navigation.compare", requiresAuth: false },
   },
   {
     path: "/:pathMatch(.*)*",
