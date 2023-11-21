@@ -3,7 +3,8 @@
         "navigation": {
             "compare": "Compare works",
             "collection": "Collection",
-            "documentation": "Documentation"
+            "documentation": "Documentation",
+            "manifests": "Manifests"
         },
         "bulk-operations": {
             "add-to-manifest-collection": "Open in comparison view",
@@ -71,7 +72,8 @@
         "navigation": {
             "compare": "Werken vergelijken",
             "collection": "Collectie",
-            "documentation": "Documentatie"
+            "documentation": "Documentatie",
+            "manifests": "Manifesten"
         },
         "bulk-operations": {
             "add-to-manifest-collection": "Openen in vergelijkingsweergave",
