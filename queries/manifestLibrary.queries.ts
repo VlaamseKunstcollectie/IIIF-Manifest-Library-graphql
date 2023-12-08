@@ -1239,4 +1239,8 @@ export const manifestLibraryQueries = gql`
       hasPermission
     }
   }
+
+  mutation GenerateTranscode($mediafileIds: [String!]!, $transcodeType: TranscodeType!, $masterEntityId: String){
+    generateTranscode(mediafileIds: $mediafileIds, transcodeType: $transcodeType, masterEntityId: $masterEntityId)
+  }
 `;
